@@ -12,6 +12,9 @@
 		DE91D67C240FC355003F7D93 /* CoreDataTest.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DE91D67A240FC355003F7D93 /* CoreDataTest.xcdatamodeld */; };
 		DE91D67E240FC357003F7D93 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE91D67D240FC357003F7D93 /* Assets.xcassets */; };
 		DE91D681240FC357003F7D93 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE91D67F240FC357003F7D93 /* Main.storyboard */; };
+		DE91D690240FD9AF003F7D93 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE91D68F240FD9AF003F7D93 /* User.swift */; };
+		DE91D692240FD9C7003F7D93 /* CoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE91D691240FD9C7003F7D93 /* CoreManager.swift */; };
+		DE91D694240FDA27003F7D93 /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE91D693240FDA27003F7D93 /* MainVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +26,9 @@
 		DE91D680240FC357003F7D93 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DE91D682240FC357003F7D93 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DE91D683240FC357003F7D93 /* CoreDataTest.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CoreDataTest.entitlements; sourceTree = "<group>"; };
+		DE91D68F240FD9AF003F7D93 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		DE91D691240FD9C7003F7D93 /* CoreManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreManager.swift; sourceTree = "<group>"; };
+		DE91D693240FDA27003F7D93 /* MainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,15 +61,66 @@
 		DE91D675240FC355003F7D93 /* CoreDataTest */ = {
 			isa = PBXGroup;
 			children = (
-				DE91D676240FC355003F7D93 /* AppDelegate.swift */,
-				DE91D678240FC355003F7D93 /* ViewController.swift */,
-				DE91D67D240FC357003F7D93 /* Assets.xcassets */,
-				DE91D67F240FC357003F7D93 /* Main.storyboard */,
-				DE91D682240FC357003F7D93 /* Info.plist */,
 				DE91D683240FC357003F7D93 /* CoreDataTest.entitlements */,
-				DE91D67A240FC355003F7D93 /* CoreDataTest.xcdatamodeld */,
+				DE91D689240FD7AA003F7D93 /* Source */,
+				DE91D68A240FD827003F7D93 /* Models */,
+				DE91D68B240FD842003F7D93 /* Storyboards */,
+				DE91D68C240FD85C003F7D93 /* CoreData */,
+				DE91D68D240FD873003F7D93 /* Resources */,
+				DE91D68E240FD895003F7D93 /* Plist */,
 			);
 			path = CoreDataTest;
+			sourceTree = "<group>";
+		};
+		DE91D689240FD7AA003F7D93 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				DE91D676240FC355003F7D93 /* AppDelegate.swift */,
+				DE91D678240FC355003F7D93 /* ViewController.swift */,
+				DE91D693240FDA27003F7D93 /* MainVC.swift */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
+		DE91D68A240FD827003F7D93 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				DE91D68F240FD9AF003F7D93 /* User.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		DE91D68B240FD842003F7D93 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				DE91D67F240FC357003F7D93 /* Main.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		DE91D68C240FD85C003F7D93 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				DE91D67A240FC355003F7D93 /* CoreDataTest.xcdatamodeld */,
+				DE91D691240FD9C7003F7D93 /* CoreManager.swift */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
+		DE91D68D240FD873003F7D93 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				DE91D67D240FC357003F7D93 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		DE91D68E240FD895003F7D93 /* Plist */ = {
+			isa = PBXGroup;
+			children = (
+				DE91D682240FC357003F7D93 /* Info.plist */,
+			);
+			path = Plist;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -136,9 +193,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DE91D690240FD9AF003F7D93 /* User.swift in Sources */,
+				DE91D694240FDA27003F7D93 /* MainVC.swift in Sources */,
 				DE91D679240FC355003F7D93 /* ViewController.swift in Sources */,
 				DE91D67C240FC355003F7D93 /* CoreDataTest.xcdatamodeld in Sources */,
 				DE91D677240FC355003F7D93 /* AppDelegate.swift in Sources */,
+				DE91D692240FD9C7003F7D93 /* CoreManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -278,7 +338,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = YQ63ZZYZV7;
 				ENABLE_HARDENED_RUNTIME = YES;
-				INFOPLIST_FILE = CoreDataTest/Info.plist;
+				INFOPLIST_FILE = CoreDataTest/Plist/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
@@ -299,7 +359,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = YQ63ZZYZV7;
 				ENABLE_HARDENED_RUNTIME = YES;
-				INFOPLIST_FILE = CoreDataTest/Info.plist;
+				INFOPLIST_FILE = CoreDataTest/Plist/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
