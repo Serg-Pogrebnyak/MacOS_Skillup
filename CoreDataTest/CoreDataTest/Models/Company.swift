@@ -9,7 +9,7 @@
 import Foundation
 import CoreData
 
-class Company: NSManagedObject {
+class Company: NSManagedObject, TableViewFirstColumnProtocol {
     @NSManaged public var name: String
     @NSManaged public var offices: NSSet
     @NSManaged public var teams: NSSet

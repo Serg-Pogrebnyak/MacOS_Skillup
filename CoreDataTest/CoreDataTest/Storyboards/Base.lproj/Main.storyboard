@@ -783,7 +783,7 @@
                                                 </tableColumn>
                                             </tableColumns>
                                             <connections>
-                                                <binding destination="XfG-lQ-9wD" name="content" keyPath="self.arrayOfUsers" id="APV-PP-aFC"/>
+                                                <binding destination="XfG-lQ-9wD" name="content" keyPath="self.arrayOfElements" id="xex-X4-hdP"/>
                                             </connections>
                                         </tableView>
                                     </subviews>
