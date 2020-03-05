@@ -11,7 +11,7 @@ import CoreData
 
 class Team: NSManagedObject {
     @NSManaged public var name: String
-    @NSManaged public var room: Room
+    @NSManaged public var rooms: NSSet
     @NSManaged public var groups: NSSet
     @NSManaged public var company: Company
     @NSManaged public var idLocal: String

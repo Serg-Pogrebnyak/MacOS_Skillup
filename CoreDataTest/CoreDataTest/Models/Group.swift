@@ -12,7 +12,7 @@ import CoreData
 class Group: NSManagedObject {
     @NSManaged public var name: String
     @NSManaged public var team: Team
-    @NSManaged public var person: NSSet
+    @NSManaged public var persons: NSSet
     @NSManaged public var idLocal: String
 
     init(groupName: String) {

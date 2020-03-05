@@ -1,4 +1,48 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="15702" systemVersion="19D76" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithCloudKit="YES" userDefinedModelVersionIdentifier="">
-    <elements/>
+    <entity name="Company" representedClassName=".Company" syncable="YES">
+        <attribute name="idLocal" attributeType="String" defaultValueString="defaultId"/>
+        <attribute name="name" attributeType="String" defaultValueString="defaultName"/>
+        <relationship name="offices" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Office" inverseName="company" inverseEntity="Office"/>
+        <relationship name="teams" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Team" inverseName="company" inverseEntity="Team"/>
+    </entity>
+    <entity name="Group" representedClassName=".Group" syncable="YES">
+        <attribute name="idLocal" attributeType="String" defaultValueString="defaultId"/>
+        <attribute name="name" attributeType="String" defaultValueString="defaultName"/>
+        <relationship name="persons" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Person" inverseName="group" inverseEntity="Person"/>
+        <relationship name="team" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Team" inverseName="groups" inverseEntity="Team"/>
+    </entity>
+    <entity name="Office" representedClassName=".Office" syncable="YES">
+        <attribute name="address" attributeType="String" defaultValueString="defaultAddress"/>
+        <attribute name="idLocal" attributeType="String" defaultValueString="defaultId"/>
+        <attribute name="name" attributeType="String" defaultValueString="defaultName"/>
+        <relationship name="company" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Company" inverseName="offices" inverseEntity="Company"/>
+        <relationship name="rooms" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Room" inverseName="office" inverseEntity="Room"/>
+    </entity>
+    <entity name="Person" representedClassName=".Person" syncable="YES">
+        <attribute name="idLocal" attributeType="String" defaultValueString="defaultId"/>
+        <attribute name="name" attributeType="String" defaultValueString="defaultName"/>
+        <relationship name="group" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Group" inverseName="persons" inverseEntity="Group"/>
+    </entity>
+    <entity name="Room" representedClassName=".Room" syncable="YES">
+        <attribute name="idLocal" attributeType="String" defaultValueString="defaultId"/>
+        <attribute name="roomNumber" attributeType="String" defaultValueString="defaultRoomNumber"/>
+        <relationship name="office" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Office" inverseName="rooms" inverseEntity="Office"/>
+        <relationship name="teams" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Team" inverseName="rooms" inverseEntity="Team"/>
+    </entity>
+    <entity name="Team" representedClassName=".Team" syncable="YES">
+        <attribute name="idLocal" attributeType="String" defaultValueString="defaultId"/>
+        <attribute name="name" attributeType="String" defaultValueString="defaultName"/>
+        <relationship name="company" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Company" inverseName="teams" inverseEntity="Company"/>
+        <relationship name="groups" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Group" inverseName="team" inverseEntity="Group"/>
+        <relationship name="rooms" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Room" inverseName="teams" inverseEntity="Room"/>
+    </entity>
+    <elements>
+        <element name="Company" positionX="-571.08203125" positionY="178.9453125" width="128" height="103"/>
+        <element name="Group" positionX="588.7734375" positionY="297.56640625" width="128" height="103"/>
+        <element name="Office" positionX="-191.3125" positionY="143.65625" width="128" height="118"/>
+        <element name="Person" positionX="828.59375" positionY="297.36328125" width="299.92578125" height="88"/>
+        <element name="Room" positionX="147.0078125" positionY="-108.74609375" width="128" height="103"/>
+        <element name="Team" positionX="338.30859375" positionY="297.48828125" width="128" height="118"/>
+    </elements>
 </model>

@@ -11,7 +11,7 @@
 		DE91D67C240FC355003F7D93 /* CoreDataTest.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DE91D67A240FC355003F7D93 /* CoreDataTest.xcdatamodeld */; };
 		DE91D67E240FC357003F7D93 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE91D67D240FC357003F7D93 /* Assets.xcassets */; };
 		DE91D681240FC357003F7D93 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE91D67F240FC357003F7D93 /* Main.storyboard */; };
-		DE91D690240FD9AF003F7D93 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE91D68F240FD9AF003F7D93 /* User.swift */; };
+		DE91D690240FD9AF003F7D93 /* Employee.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE91D68F240FD9AF003F7D93 /* Employee.swift */; };
 		DE91D692240FD9C7003F7D93 /* CoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE91D691240FD9C7003F7D93 /* CoreManager.swift */; };
 		DE91D694240FDA27003F7D93 /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE91D693240FDA27003F7D93 /* MainVC.swift */; };
 		DE91D698241139B2003F7D93 /* Company.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE91D697241139B2003F7D93 /* Company.swift */; };
@@ -29,7 +29,7 @@
 		DE91D680240FC357003F7D93 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DE91D682240FC357003F7D93 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DE91D683240FC357003F7D93 /* CoreDataTest.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CoreDataTest.entitlements; sourceTree = "<group>"; };
-		DE91D68F240FD9AF003F7D93 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		DE91D68F240FD9AF003F7D93 /* Employee.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Employee.swift; sourceTree = "<group>"; };
 		DE91D691240FD9C7003F7D93 /* CoreManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreManager.swift; sourceTree = "<group>"; };
 		DE91D693240FDA27003F7D93 /* MainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
 		DE91D697241139B2003F7D93 /* Company.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Company.swift; sourceTree = "<group>"; };
@@ -97,7 +97,7 @@
 				DE91D69B24113B43003F7D93 /* Room.swift */,
 				DE91D69D24113B9E003F7D93 /* Team.swift */,
 				DE91D69F24113C52003F7D93 /* Group.swift */,
-				DE91D68F240FD9AF003F7D93 /* User.swift */,
+				DE91D68F240FD9AF003F7D93 /* Employee.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -206,7 +206,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DE91D69E24113B9E003F7D93 /* Team.swift in Sources */,
-				DE91D690240FD9AF003F7D93 /* User.swift in Sources */,
+				DE91D690240FD9AF003F7D93 /* Employee.swift in Sources */,
 				DE91D69A24113A46003F7D93 /* Office.swift in Sources */,
 				DE91D6A024113C52003F7D93 /* Group.swift in Sources */,
 				DE91D69C24113B43003F7D93 /* Room.swift in Sources */,

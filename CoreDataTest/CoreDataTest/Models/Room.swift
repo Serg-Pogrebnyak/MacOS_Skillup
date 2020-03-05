@@ -11,7 +11,7 @@ import CoreData
 
 class Room: NSManagedObject {
     @NSManaged public var roomNumber: String
-    @NSManaged public var team: NSSet
+    @NSManaged public var teams: NSSet
     @NSManaged public var office: Office
     @NSManaged public var idLocal: String
 
