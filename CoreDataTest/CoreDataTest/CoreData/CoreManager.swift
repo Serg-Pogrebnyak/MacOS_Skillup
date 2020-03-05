@@ -26,19 +26,9 @@ class CoreManager {
         return persistentContainer.viewContext
     }
 
-    func getAllUsers() -> [User]? {
-        do {
-            return try self.coreManagerContext.fetch(User.fetchRequest()) as? [User]
-        } catch {
-            let nserror = error as NSError
-            fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
-        }
-
-    }
-
-//    func getAllItems() -> [Item]? {
+//    func getAllEmployees() -> [Employee]? {
 //        do {
-//            return try self.coreManagerContext.fetch(Item.fetchRequest()) as? [Item]
+//            return try self.coreManagerContext.fetch(Employee.fetchRequest()) as? [Employee]
 //        } catch {
 //            let nserror = error as NSError
 //            fatalError("Unresolved error \(nserror), \(nserror.userInfo)")

@@ -12,14 +12,14 @@ class MainVC: NSViewController {
 
     @IBOutlet fileprivate weak var tableView: NSTableView!
     @IBOutlet fileprivate weak var userNameTextField: NSTextField!
-    @objc dynamic fileprivate var arrayOfUsers = [User]()
+    @objc dynamic fileprivate var arrayOfUsers = [Employee]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
     }
     
     @IBAction func didTapAddNewUserButton(_ sender: Any) {
-        arrayOfUsers.append(User.init(userName: userNameTextField.stringValue))
+        arrayOfUsers.append(Employee.init(employeeName: userNameTextField.stringValue))
         tableView.reloadData()
     }
     
