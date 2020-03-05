@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		DE91D677240FC355003F7D93 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE91D676240FC355003F7D93 /* AppDelegate.swift */; };
-		DE91D679240FC355003F7D93 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE91D678240FC355003F7D93 /* ViewController.swift */; };
 		DE91D67C240FC355003F7D93 /* CoreDataTest.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DE91D67A240FC355003F7D93 /* CoreDataTest.xcdatamodeld */; };
 		DE91D67E240FC357003F7D93 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE91D67D240FC357003F7D93 /* Assets.xcassets */; };
 		DE91D681240FC357003F7D93 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE91D67F240FC357003F7D93 /* Main.storyboard */; };
@@ -20,7 +19,6 @@
 /* Begin PBXFileReference section */
 		DE91D673240FC355003F7D93 /* CoreDataTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoreDataTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE91D676240FC355003F7D93 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		DE91D678240FC355003F7D93 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		DE91D67B240FC355003F7D93 /* CoreDataTest.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreDataTest.xcdatamodel; sourceTree = "<group>"; };
 		DE91D67D240FC357003F7D93 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DE91D680240FC357003F7D93 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -76,7 +74,6 @@
 			isa = PBXGroup;
 			children = (
 				DE91D676240FC355003F7D93 /* AppDelegate.swift */,
-				DE91D678240FC355003F7D93 /* ViewController.swift */,
 				DE91D693240FDA27003F7D93 /* MainVC.swift */,
 			);
 			path = Source;
@@ -195,7 +192,6 @@
 			files = (
 				DE91D690240FD9AF003F7D93 /* User.swift in Sources */,
 				DE91D694240FDA27003F7D93 /* MainVC.swift in Sources */,
-				DE91D679240FC355003F7D93 /* ViewController.swift in Sources */,
 				DE91D67C240FC355003F7D93 /* CoreDataTest.xcdatamodeld in Sources */,
 				DE91D677240FC355003F7D93 /* AppDelegate.swift in Sources */,
 				DE91D692240FD9C7003F7D93 /* CoreManager.swift in Sources */,
