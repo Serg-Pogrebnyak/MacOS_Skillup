@@ -26,15 +26,16 @@ class CoreManager {
         return persistentContainer.viewContext
     }
 
-//    func getAllEmployees() -> [Employee]? {
-//        do {
-//            return try self.coreManagerContext.fetch(Employee.fetchRequest()) as? [Employee]
-//        } catch {
-//            let nserror = error as NSError
-//            fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
-//        }
-//
-//    }
+    func getAllCompany() -> [Company] {
+        do {
+            return try self.coreManagerContext.fetch(Company.fetchRequest()) as! [Company]
+        } catch {
+            return [Company]()
+            let nserror = error as NSError
+            fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
+        }
+
+    }
 
     // MARK: - Core Data Saving support
     func saveContext () {

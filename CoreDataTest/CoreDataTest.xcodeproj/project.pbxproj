@@ -20,6 +20,7 @@
 		DE91D69E24113B9E003F7D93 /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE91D69D24113B9E003F7D93 /* Team.swift */; };
 		DE91D6A024113C52003F7D93 /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE91D69F24113C52003F7D93 /* Group.swift */; };
 		DEDDA99A24114CB60027CF2C /* TableViewFirstColumnProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDDA99924114CB60027CF2C /* TableViewFirstColumnProtocol.swift */; };
+		DEDDA99C241800AF0027CF2C /* HistoryManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDDA99B241800AF0027CF2C /* HistoryManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +40,7 @@
 		DE91D69D24113B9E003F7D93 /* Team.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Team.swift; sourceTree = "<group>"; };
 		DE91D69F24113C52003F7D93 /* Group.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
 		DEDDA99924114CB60027CF2C /* TableViewFirstColumnProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewFirstColumnProtocol.swift; sourceTree = "<group>"; };
+		DEDDA99B241800AF0027CF2C /* HistoryManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +103,7 @@
 				DE91D69F24113C52003F7D93 /* Group.swift */,
 				DE91D68F240FD9AF003F7D93 /* Employee.swift */,
 				DEDDA99924114CB60027CF2C /* TableViewFirstColumnProtocol.swift */,
+				DEDDA99B241800AF0027CF2C /* HistoryManager.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -208,6 +211,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DEDDA99C241800AF0027CF2C /* HistoryManager.swift in Sources */,
 				DE91D69E24113B9E003F7D93 /* Team.swift in Sources */,
 				DE91D690240FD9AF003F7D93 /* Employee.swift in Sources */,
 				DEDDA99A24114CB60027CF2C /* TableViewFirstColumnProtocol.swift in Sources */,
