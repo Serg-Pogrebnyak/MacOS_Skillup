@@ -10,16 +10,17 @@ import Cocoa
 
 class MainVC: NSViewController {
 
-    @IBOutlet weak var relationShipButton: NSButton!
+    @IBOutlet weak var buttonsStackView: CustomStackOfButtons!
     @IBOutlet fileprivate weak var userNameTextField: NSTextField!
     @objc dynamic fileprivate var arrayOfElements = [TableViewFirstColumnProtocol]()
     var selectedElement: TableViewFirstColumnProtocol?
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        buttonsStackView.delegate = self
         HistoryManager.shared.currentObject = PickerElement.company
         arrayOfElements = CoreManager.shared.getAllCompany()
-        relationShipButton.title = arrayOfElements.first!.arrayOfRelationShip().first!
+        buttonsStackView.generateButtonsStack(arrayOfTitle: arrayOfElements.first!.arrayOfRelationShip())
     }
     
     @IBAction func didTapAddNewUserButton(_ sender: Any) {
@@ -40,20 +41,24 @@ class MainVC: NSViewController {
     @IBAction func saveDataToCoreData(_ sender: Any) {
         CoreManager.shared.saveContext()
     }
-
-    @IBAction func didTapRealtionShipButton(_ sender: NSButtonCell) {
-        guard let select = selectedElement else {return}
-        arrayOfElements = select.choosed(selected: sender.title)
-        HistoryManager.shared.addNewObject(newObj: select)
-        HistoryManager.shared.currentObject = PickerElement.selected(string: sender.title)
-        guard !arrayOfElements.isEmpty else {return}
-        relationShipButton.title = arrayOfElements.first!.arrayOfRelationShip().first!
-    }
 }
 
 extension MainVC: NSTableViewDelegate {
     func tableView(_ tableView: NSTableView, shouldSelectRow row: Int) -> Bool {
         self.selectedElement = arrayOfElements[row]
         return true
+    }
+}
+
+extension MainVC: DidTapOnButtonFromCustomStackOfButtonsDelegate {
+    func didTapOnButton(withTitle title: String) {
+        guard let select = selectedElement else {return}
+        arrayOfElements = select.choosed(selected: title)
+        HistoryManager.shared.addNewObject(newObj: select)
+        HistoryManager.shared.currentObject = PickerElement.selected(string: title)
+        guard !arrayOfElements.isEmpty else {
+            buttonsStackView.hideAllButtons()
+            return}
+        buttonsStackView.generateButtonsStack(arrayOfTitle: arrayOfElements.first!.arrayOfRelationShip())
     }
 }

@@ -766,7 +766,7 @@
                                                             <tableColumns>
                                                                 <tableColumn width="643" minWidth="40" maxWidth="1000" id="Ovg-67-m5f">
                                                                     <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="center" title="Company">
-                                                                        <font key="font" metaFont="controlContent" size="11"/>
+                                                                        <font key="font" metaFont="label" size="11"/>
                                                                         <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
                                                                         <color key="backgroundColor" name="headerColor" catalog="System" colorSpace="catalog"/>
                                                                     </tableHeaderCell>
@@ -845,16 +845,6 @@
                                                 <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="NSAddTemplate" id="7gj-ka-mBQ"/>
                                                 <color key="contentTintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             </imageView>
-                                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="xL0-WE-goQ">
-                                                <rect key="frame" x="60" y="141" width="81" height="32"/>
-                                                <buttonCell key="cell" type="push" title="Button" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="6Ob-eb-MST">
-                                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                                    <font key="font" metaFont="system"/>
-                                                    <connections>
-                                                        <action selector="didTapRealtionShipButton:" target="XfG-lQ-9wD" id="eTq-6e-TVc"/>
-                                                    </connections>
-                                                </buttonCell>
-                                            </button>
                                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Cyd-wd-cG6">
                                                 <rect key="frame" x="18" y="189" width="164" height="16"/>
                                                 <textFieldCell key="cell" lineBreakMode="clipping" title="Label" id="Uyt-cp-uPZ">
@@ -863,15 +853,21 @@
                                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                 </textFieldCell>
                                             </textField>
+                                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="fEQ-oa-VcB" customClass="CustomStackOfButtons" customModule="CoreDataTest" customModuleProvider="target">
+                                                <rect key="frame" x="20" y="20" width="160" height="139"/>
+                                            </customView>
                                         </subviews>
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="Cyd-wd-cG6" secondAttribute="trailing" constant="20" id="GJE-FX-mBO"/>
                                             <constraint firstItem="Cyd-wd-cG6" firstAttribute="top" secondItem="3yc-CM-EN7" secondAttribute="bottom" constant="20" id="HTM-1n-F08"/>
                                             <constraint firstItem="3yc-CM-EN7" firstAttribute="centerX" secondItem="o2V-9C-gnI" secondAttribute="centerX" id="IKs-6Q-TaF"/>
+                                            <constraint firstItem="fEQ-oa-VcB" firstAttribute="leading" secondItem="Cyd-wd-cG6" secondAttribute="leading" id="Syx-aE-PTZ"/>
+                                            <constraint firstItem="fEQ-oa-VcB" firstAttribute="top" secondItem="Cyd-wd-cG6" secondAttribute="bottom" constant="30" id="YeK-GA-OEs"/>
+                                            <constraint firstItem="fEQ-oa-VcB" firstAttribute="trailing" secondItem="Cyd-wd-cG6" secondAttribute="trailing" id="Yi7-rU-KZp"/>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="l7n-aP-vAo"/>
                                             <constraint firstItem="3yc-CM-EN7" firstAttribute="top" secondItem="o2V-9C-gnI" secondAttribute="top" constant="20" id="ncG-JO-Z41"/>
-                                            <constraint firstItem="xL0-WE-goQ" firstAttribute="centerX" secondItem="o2V-9C-gnI" secondAttribute="centerX" id="om7-e2-rSS"/>
-                                            <constraint firstItem="xL0-WE-goQ" firstAttribute="top" secondItem="Cyd-wd-cG6" secondAttribute="bottom" constant="20" id="u7x-eq-8ZG"/>
+                                            <constraint firstAttribute="bottom" secondItem="fEQ-oa-VcB" secondAttribute="bottom" constant="20" id="qZX-L0-k8e"/>
+                                            <constraint firstItem="fEQ-oa-VcB" firstAttribute="centerX" secondItem="o2V-9C-gnI" secondAttribute="centerX" id="tT4-hK-Uue"/>
                                             <constraint firstItem="Cyd-wd-cG6" firstAttribute="leading" secondItem="o2V-9C-gnI" secondAttribute="leading" constant="20" id="zHH-IQ-iUx"/>
                                         </constraints>
                                     </customView>
@@ -897,7 +893,7 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="relationShipButton" destination="xL0-WE-goQ" id="xhC-YG-drt"/>
+                        <outlet property="buttonsStackView" destination="fEQ-oa-VcB" id="ybh-Ll-U90"/>
                         <outlet property="userNameTextField" destination="mEI-Hu-XM9" id="Bgf-b6-wL7"/>
                     </connections>
                 </viewController>

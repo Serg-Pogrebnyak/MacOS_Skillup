@@ -19,6 +19,8 @@
 		DE91D69C24113B43003F7D93 /* Room.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE91D69B24113B43003F7D93 /* Room.swift */; };
 		DE91D69E24113B9E003F7D93 /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE91D69D24113B9E003F7D93 /* Team.swift */; };
 		DE91D6A024113C52003F7D93 /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE91D69F24113C52003F7D93 /* Group.swift */; };
+		DEB591B22418FE740087D51E /* CustomStackOfButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB591B12418FE740087D51E /* CustomStackOfButtons.swift */; };
+		DEB591B42418FE8A0087D51E /* CustomStackOfButtons.xib in Resources */ = {isa = PBXBuildFile; fileRef = DEB591B32418FE8A0087D51E /* CustomStackOfButtons.xib */; };
 		DEDDA99A24114CB60027CF2C /* TableViewFirstColumnProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDDA99924114CB60027CF2C /* TableViewFirstColumnProtocol.swift */; };
 		DEDDA99C241800AF0027CF2C /* HistoryManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDDA99B241800AF0027CF2C /* HistoryManager.swift */; };
 /* End PBXBuildFile section */
@@ -39,6 +41,8 @@
 		DE91D69B24113B43003F7D93 /* Room.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Room.swift; sourceTree = "<group>"; };
 		DE91D69D24113B9E003F7D93 /* Team.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Team.swift; sourceTree = "<group>"; };
 		DE91D69F24113C52003F7D93 /* Group.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
+		DEB591B12418FE740087D51E /* CustomStackOfButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomStackOfButtons.swift; sourceTree = "<group>"; };
+		DEB591B32418FE8A0087D51E /* CustomStackOfButtons.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomStackOfButtons.xib; sourceTree = "<group>"; };
 		DEDDA99924114CB60027CF2C /* TableViewFirstColumnProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewFirstColumnProtocol.swift; sourceTree = "<group>"; };
 		DEDDA99B241800AF0027CF2C /* HistoryManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -78,6 +82,7 @@
 				DE91D68A240FD827003F7D93 /* Models */,
 				DE91D68B240FD842003F7D93 /* Storyboards */,
 				DE91D68C240FD85C003F7D93 /* CoreData */,
+				DEB591B02418FDE10087D51E /* Nibs */,
 				DE91D68D240FD873003F7D93 /* Resources */,
 				DE91D68E240FD895003F7D93 /* Plist */,
 			);
@@ -141,6 +146,15 @@
 			path = Plist;
 			sourceTree = "<group>";
 		};
+		DEB591B02418FDE10087D51E /* Nibs */ = {
+			isa = PBXGroup;
+			children = (
+				DEB591B12418FE740087D51E /* CustomStackOfButtons.swift */,
+				DEB591B32418FE8A0087D51E /* CustomStackOfButtons.xib */,
+			);
+			path = Nibs;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -199,6 +213,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DEB591B42418FE8A0087D51E /* CustomStackOfButtons.xib in Resources */,
 				DE91D67E240FC357003F7D93 /* Assets.xcassets in Resources */,
 				DE91D681240FC357003F7D93 /* Main.storyboard in Resources */,
 			);
@@ -214,6 +229,7 @@
 				DEDDA99C241800AF0027CF2C /* HistoryManager.swift in Sources */,
 				DE91D69E24113B9E003F7D93 /* Team.swift in Sources */,
 				DE91D690240FD9AF003F7D93 /* Employee.swift in Sources */,
+				DEB591B22418FE740087D51E /* CustomStackOfButtons.swift in Sources */,
 				DEDDA99A24114CB60027CF2C /* TableViewFirstColumnProtocol.swift in Sources */,
 				DE91D69A24113A46003F7D93 /* Office.swift in Sources */,
 				DE91D6A024113C52003F7D93 /* Group.swift in Sources */,
