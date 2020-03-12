@@ -41,6 +41,23 @@ class MainVC: NSViewController {
     @IBAction func saveDataToCoreData(_ sender: Any) {
         CoreManager.shared.saveContext()
     }
+
+    @IBAction func backButtonTapped(_ sender: Any) {
+        guard let lastElement = HistoryManager.shared.back() else {//if no element should load start list in this case it's all list of company (like entrance point)
+            arrayOfElements = CoreManager.shared.getAllCompany()
+            return
+        }
+
+        arrayOfElements = lastElement.loadAllRelationShipObjetcsBy(typeOfObject: HistoryManager.shared.currentObject.rawValue)
+        updateUI()
+    }
+
+    func updateUI() {
+        guard !arrayOfElements.isEmpty else {
+            buttonsStackView.hideAllButtons()
+            return}
+        buttonsStackView.generateButtonsStack(arrayOfTitle: arrayOfElements.first!.arrayOfRelationShip())
+    }
 }
 
 extension MainVC: NSTableViewDelegate {
@@ -53,12 +70,10 @@ extension MainVC: NSTableViewDelegate {
 extension MainVC: DidTapOnButtonFromCustomStackOfButtonsDelegate {
     func didTapOnButton(withTitle title: String) {
         guard let select = selectedElement else {return}
+
         arrayOfElements = select.choosed(selected: title)
-        HistoryManager.shared.addNewObject(newObj: select)
-        HistoryManager.shared.currentObject = PickerElement.selected(string: title)
-        guard !arrayOfElements.isEmpty else {
-            buttonsStackView.hideAllButtons()
-            return}
-        buttonsStackView.generateButtonsStack(arrayOfTitle: arrayOfElements.first!.arrayOfRelationShip())
+        HistoryManager.shared.addNewObject(newObj: select)//should be only first
+        HistoryManager.shared.currentObject = PickerElement.selected(string: title)//should be only second, don't change because it can broke logic
+        updateUI()
     }
 }

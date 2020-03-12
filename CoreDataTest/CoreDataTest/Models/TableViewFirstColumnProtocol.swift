@@ -32,6 +32,7 @@ enum PickerElement: String {
 
 @objc protocol TableViewFirstColumnProtocol {
     var displayNameForTableView: String {get}
+    func loadAllRelationShipObjetcsBy(typeOfObject type: String) -> [TableViewFirstColumnProtocol]
     func arrayOfRelationShip() -> [String]
     func choosed(selected: String) -> [TableViewFirstColumnProtocol]
     func addNewElement(element: TableViewFirstColumnProtocol)

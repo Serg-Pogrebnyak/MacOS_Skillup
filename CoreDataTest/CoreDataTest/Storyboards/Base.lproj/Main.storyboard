@@ -766,7 +766,7 @@
                                                             <tableColumns>
                                                                 <tableColumn width="643" minWidth="40" maxWidth="1000" id="Ovg-67-m5f">
                                                                     <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="center" title="Company">
-                                                                        <font key="font" metaFont="label" size="11"/>
+                                                                        <font key="font" metaFont="menu" size="11"/>
                                                                         <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
                                                                         <color key="backgroundColor" name="headerColor" catalog="System" colorSpace="catalog"/>
                                                                     </tableHeaderCell>
@@ -877,8 +877,19 @@
                                     <real value="250"/>
                                 </holdingPriorities>
                             </splitView>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="aBi-pW-Z31">
+                                <rect key="frame" x="4" y="298" width="112" height="32"/>
+                                <buttonCell key="cell" type="push" title="Back" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="57X-hH-YFp">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="backButtonTapped:" target="XfG-lQ-9wD" id="j8I-Di-LOS"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <constraints>
+                            <constraint firstItem="mEI-Hu-XM9" firstAttribute="leading" secondItem="aBi-pW-Z31" secondAttribute="leading" id="02z-60-Ble"/>
                             <constraint firstAttribute="bottom" secondItem="94s-S9-Ny1" secondAttribute="bottom" constant="8" id="0cr-lh-fXv"/>
                             <constraint firstItem="mEI-Hu-XM9" firstAttribute="centerY" secondItem="m2S-Jp-Qdl" secondAttribute="centerY" id="524-wz-2cg"/>
                             <constraint firstItem="94s-S9-Ny1" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="15" id="5lX-Np-YK1"/>
@@ -889,7 +900,9 @@
                             <constraint firstItem="mEI-Hu-XM9" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="10" id="P9z-Kk-E4j"/>
                             <constraint firstItem="EFg-dy-4uw" firstAttribute="top" secondItem="mEI-Hu-XM9" secondAttribute="bottom" constant="20" id="Wiv-9j-Ob2"/>
                             <constraint firstItem="EFg-dy-4uw" firstAttribute="trailing" secondItem="5Ai-Ye-JTk" secondAttribute="trailing" id="aiF-zC-ES5"/>
+                            <constraint firstItem="mEI-Hu-XM9" firstAttribute="trailing" secondItem="aBi-pW-Z31" secondAttribute="trailing" id="jAb-3G-5Jd"/>
                             <constraint firstItem="94s-S9-Ny1" firstAttribute="leading" secondItem="mEI-Hu-XM9" secondAttribute="trailing" constant="20" id="od6-8I-BbM"/>
+                            <constraint firstItem="mEI-Hu-XM9" firstAttribute="top" secondItem="aBi-pW-Z31" secondAttribute="bottom" constant="60" id="vEj-mI-g1I"/>
                         </constraints>
                     </view>
                     <connections>

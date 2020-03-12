@@ -38,6 +38,17 @@ class Office: NSManagedObject {
 }
 
 extension Office: TableViewFirstColumnProtocol {
+    
+    func loadAllRelationShipObjetcsBy(typeOfObject type: String) -> [TableViewFirstColumnProtocol] {
+        let selectedElement = PickerElement.selected(string: type)
+        switch selectedElement {
+        case .rooms:
+            return self.rooms.allObjects as! [TableViewFirstColumnProtocol]
+        default:
+            fatalError("wrong select")
+        }
+    }
+
     func choosed(selected: String) -> [TableViewFirstColumnProtocol] {
         switch selected {
         case PickerElement.rooms.rawValue:

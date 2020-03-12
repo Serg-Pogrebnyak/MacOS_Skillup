@@ -36,6 +36,19 @@ class Company: NSManagedObject {
 }
 
 extension Company: TableViewFirstColumnProtocol {
+    
+    func loadAllRelationShipObjetcsBy(typeOfObject type: String) -> [TableViewFirstColumnProtocol] {
+        let selectedElement = PickerElement.selected(string: type)
+        switch selectedElement {
+        case .offices:
+            return self.offices.allObjects as! [TableViewFirstColumnProtocol]
+        case .teams:
+            return self.teams.allObjects as! [TableViewFirstColumnProtocol]
+        default:
+            fatalError("wrong select")
+        }
+    }
+
     func choosed(selected: String) -> [TableViewFirstColumnProtocol] {
         switch selected {
         case PickerElement.offices.rawValue:

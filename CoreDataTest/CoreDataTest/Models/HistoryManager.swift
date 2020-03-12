@@ -14,8 +14,21 @@ class HistoryManager {
     var currentObject: PickerElement!
 
     private var stackOfHistoryObject = [TableViewFirstColumnProtocol]()
+    private var stackOfHistoryObjectState = [PickerElement]()
 
     func addNewObject(newObj: TableViewFirstColumnProtocol) {
+        stackOfHistoryObjectState.append(currentObject)
         stackOfHistoryObject.append(newObj)
+    }
+
+    func back() -> TableViewFirstColumnProtocol? {
+        guard !stackOfHistoryObject.isEmpty else {return nil}
+        currentObject = stackOfHistoryObjectState.removeLast()
+        stackOfHistoryObject.removeLast()
+        if let last = stackOfHistoryObject.last {
+            return last
+        } else {
+            return nil
+        }
     }
 }
