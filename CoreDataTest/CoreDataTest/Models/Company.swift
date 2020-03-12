@@ -15,9 +15,6 @@ class Company: NSManagedObject {
     @NSManaged public var offices: NSSet
     @NSManaged public var teams: NSSet
     @NSManaged public var idLocal: String
-    @objc dynamic public var displayNameForTableView: String {
-        return name
-    }
 
     init(companyName: String) {
         let entity = NSEntityDescription.entity(forEntityName: "Company", in: CoreManager.shared.coreManagerContext)!
@@ -36,6 +33,9 @@ class Company: NSManagedObject {
 }
 
 extension Company: TableViewFirstColumnProtocol {
+    @objc dynamic public var displayNameForTableView: String {
+        return name
+    }
     
     func loadAllRelationShipObjetcsBy(typeOfObject type: String) -> [TableViewFirstColumnProtocol] {
         let selectedElement = PickerElement.selected(string: type)
@@ -47,6 +47,10 @@ extension Company: TableViewFirstColumnProtocol {
         default:
             fatalError("wrong select")
         }
+    }
+
+    func arrayOfRelationShip() -> [String] {
+        return [PickerElement.offices.rawValue, PickerElement.teams.rawValue]
     }
 
     func choosed(selected: String) -> [TableViewFirstColumnProtocol] {
@@ -82,9 +86,5 @@ extension Company: TableViewFirstColumnProtocol {
         mutableCopy.add(newTeam)
         self.offices = mutableCopy
         CoreManager.shared.saveContext()
-    }
-
-    func arrayOfRelationShip() -> [String] {
-        return [PickerElement.offices.rawValue, PickerElement.teams.rawValue]
     }
 }
