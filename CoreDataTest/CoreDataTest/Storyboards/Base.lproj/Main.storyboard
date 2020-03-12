@@ -790,7 +790,7 @@
                                                                                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                                                                     </textFieldCell>
                                                                                     <connections>
-                                                                                        <binding destination="zrW-sz-PAK" name="value" keyPath="objectValue.name" id="yfW-dy-G7R"/>
+                                                                                        <binding destination="zrW-sz-PAK" name="value" keyPath="objectValue.displayNameForTableView" id="Bgk-rA-hF1"/>
                                                                                     </connections>
                                                                                 </textField>
                                                                             </subviews>
@@ -907,6 +907,7 @@
                     </view>
                     <connections>
                         <outlet property="buttonsStackView" destination="fEQ-oa-VcB" id="ybh-Ll-U90"/>
+                        <outlet property="myTableView" destination="KAr-yZ-YKI" id="Zn9-tD-Iqe"/>
                         <outlet property="userNameTextField" destination="mEI-Hu-XM9" id="Bgf-b6-wL7"/>
                     </connections>
                 </viewController>

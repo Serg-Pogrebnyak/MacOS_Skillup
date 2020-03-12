@@ -30,3 +30,48 @@ class Room: NSManagedObject {
         return NSFetchRequest<Room>(entityName: "Room")
     }
 }
+
+extension Room: TableViewFirstColumnProtocol {
+    @objc dynamic public var displayNameForTableView: String {
+        return roomNumber
+    }
+
+    func loadAllRelationShipObjetcsBy(typeOfObject type: String) -> [TableViewFirstColumnProtocol] {
+        let selectedElement = PickerElement.selected(string: type)
+        switch selectedElement {
+        case .teams:
+            return self.teams.allObjects as! [TableViewFirstColumnProtocol]
+        default:
+            fatalError("wrong select")
+        }
+    }
+
+    func arrayOfRelationShip() -> [String] {
+        return [PickerElement.offices.rawValue, PickerElement.teams.rawValue]
+    }
+
+    func choosed(selected: String) -> [TableViewFirstColumnProtocol] {
+        let selectedElement = PickerElement.selected(string: selected)
+        switch selectedElement {
+        case .teams:
+            return self.teams.allObjects as! [TableViewFirstColumnProtocol]
+        default:
+            fatalError("wrong select")
+        }
+    }
+
+    func addNewElement(element: TableViewFirstColumnProtocol) {
+        if element is Team {
+            addNewTeam(newTeam: element as! Team)
+        } else {
+            fatalError("element no found")
+        }
+    }
+
+    private func addNewTeam(newTeam: Team) {
+        let mutableCopy = self.teams.mutableCopy() as! NSMutableSet
+        mutableCopy.add(newTeam)
+        self.teams = mutableCopy
+        CoreManager.shared.saveContext()
+    }
+}

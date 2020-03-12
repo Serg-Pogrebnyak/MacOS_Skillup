@@ -10,6 +10,7 @@ import Cocoa
 
 class MainVC: NSViewController {
 
+    @IBOutlet weak var myTableView: NSTableView!
     @IBOutlet weak var buttonsStackView: CustomStackOfButtons!
     @IBOutlet fileprivate weak var userNameTextField: NSTextField!
     @objc dynamic fileprivate var arrayOfElements = [TableViewFirstColumnProtocol]()
@@ -33,7 +34,10 @@ class MainVC: NSViewController {
             select.addNewElement(element: newElement)
             arrayOfElements.append(newElement)
         case .rooms:
-            break
+            guard let select = selectedElement else {return}
+            let newElement = Room.init(roomNumber: userNameTextField.stringValue)
+            select.addNewElement(element: newElement)
+            arrayOfElements.append(newElement)
         default:
             fatalError("not found")
         }
@@ -60,7 +64,8 @@ class MainVC: NSViewController {
     func updateUI() {
         guard !arrayOfElements.isEmpty else {
             buttonsStackView.hideAllButtons()
-            return}
+            return
+        }
         buttonsStackView.generateButtonsStack(arrayOfTitle: arrayOfElements.first!.arrayOfRelationShip())
     }
 }
@@ -76,7 +81,6 @@ extension MainVC: DidTapOnButtonFromCustomStackOfButtonsDelegate {
     func didTapOnButton(withTitle title: String) {
         defer {
             updateUI()
-            selectedElement = nil
         }
         guard !HistoryManager.shared.selectedRelationshipSameToPrevious(stringRelationship: title) else {backButtonTapped(self); return}
         guard let select = selectedElement else {return}

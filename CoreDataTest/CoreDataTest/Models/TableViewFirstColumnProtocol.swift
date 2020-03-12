@@ -11,8 +11,8 @@ import Foundation
 enum PickerElement: String {
     case company
     case offices
-    case teams
     case rooms
+    case teams
 
     static func selected(string: String) -> Self {
         switch string {

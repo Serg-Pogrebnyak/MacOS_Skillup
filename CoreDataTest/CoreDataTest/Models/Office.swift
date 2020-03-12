@@ -64,13 +64,13 @@ extension Office: TableViewFirstColumnProtocol {
 
     func addNewElement(element: TableViewFirstColumnProtocol) {
         if element is Room {
-            addNewRoom(newRoom: element as! Office)
+            addNewRoom(newRoom: element as! Room)
         } else {
             fatalError("element no found")
         }
     }
 
-    private func addNewRoom(newRoom: Office) {
+    private func addNewRoom(newRoom: Room) {
         let mutableCopy = self.rooms.mutableCopy() as! NSMutableSet
         mutableCopy.add(newRoom)
         self.rooms = mutableCopy
