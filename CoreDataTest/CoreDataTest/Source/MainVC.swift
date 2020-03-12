@@ -11,14 +11,12 @@ import Cocoa
 class MainVC: NSViewController {
 
     @IBOutlet weak var myTableView: NSTableView!
-    @IBOutlet weak var buttonsStackView: CustomStackOfButtons!
     @IBOutlet fileprivate weak var userNameTextField: NSTextField!
     @objc dynamic fileprivate var arrayOfElements = [TableViewFirstColumnProtocol]()
     var selectedElement: TableViewFirstColumnProtocol?
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        buttonsStackView.delegate = self
         HistoryManager.shared.currentObject = PickerElement.company
         arrayOfElements = CoreManager.shared.getAllCompany()
         myTableView.menu = createContextMenuItems()
@@ -100,20 +98,6 @@ extension MainVC: NSTableViewDelegate {
     func tableView(_ tableView: NSTableView, shouldSelectRow row: Int) -> Bool {
         self.selectedElement = arrayOfElements[row]
         return true
-    }
-}
-
-extension MainVC: DidTapOnButtonFromCustomStackOfButtonsDelegate {
-    func didTapOnButton(withTitle title: String) {
-        defer {
-            updateUI()
-        }
-        guard !HistoryManager.shared.selectedRelationshipSameToPrevious(stringRelationship: title) else {backButtonTapped(self); return}
-        guard let select = selectedElement else {return}
-
-        arrayOfElements = select.choosed(selected: title)
-        HistoryManager.shared.addNewObject(newObj: select)//should be only first
-        HistoryManager.shared.currentObject = PickerElement.selected(string: title)//should be only second, don't change because it can broke logic
     }
 }
 
