@@ -726,7 +726,7 @@
                                 <constraints>
                                     <constraint firstAttribute="width" constant="100" id="qcB-K7-vXC"/>
                                 </constraints>
-                                <buttonCell key="cell" type="push" title="add new user" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="3WD-D0-ygX">
+                                <buttonCell key="cell" type="push" title="Add new" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="3WD-D0-ygX">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
@@ -766,7 +766,7 @@
                                                             <tableColumns>
                                                                 <tableColumn width="643" minWidth="40" maxWidth="1000" id="Ovg-67-m5f">
                                                                     <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="center" title="Company">
-                                                                        <font key="font" metaFont="menu" size="11"/>
+                                                                        <font key="font" metaFont="controlContent" size="11"/>
                                                                         <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
                                                                         <color key="backgroundColor" name="headerColor" catalog="System" colorSpace="catalog"/>
                                                                     </tableHeaderCell>

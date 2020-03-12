@@ -31,4 +31,10 @@ class HistoryManager {
             return nil
         }
     }
+
+    func selectedRelationshipSameToPrevious(stringRelationship relationship: String) -> Bool {
+        guard let lastObject = stackOfHistoryObjectState.last else {return false}
+        let object = PickerElement.selected(string: relationship)
+        return object == lastObject
+    }
 }

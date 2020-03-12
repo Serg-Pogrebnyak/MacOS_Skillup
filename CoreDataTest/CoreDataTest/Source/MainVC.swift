@@ -28,14 +28,17 @@ class MainVC: NSViewController {
         case .company:
             arrayOfElements.append(Company(companyName: userNameTextField.stringValue))
         case .offices:
+            guard let select = selectedElement else {return}
             let newElement = Office.init(officeName: userNameTextField.stringValue, address: "Karazina 2")
-            selectedElement?.addNewElement(element: newElement)
+            select.addNewElement(element: newElement)
             arrayOfElements.append(newElement)
         case .rooms:
             break
         default:
             fatalError("not found")
         }
+        userNameTextField.stringValue = ""
+        updateUI()
     }
     
     @IBAction func saveDataToCoreData(_ sender: Any) {
@@ -43,13 +46,15 @@ class MainVC: NSViewController {
     }
 
     @IBAction func backButtonTapped(_ sender: Any) {
+        defer {
+            updateUI()
+        }
         guard let lastElement = HistoryManager.shared.back() else {//if no element should load start list in this case it's all list of company (like entrance point)
             arrayOfElements = CoreManager.shared.getAllCompany()
             return
         }
 
         arrayOfElements = lastElement.loadAllRelationShipObjetcsBy(typeOfObject: HistoryManager.shared.currentObject.rawValue)
-        updateUI()
     }
 
     func updateUI() {
@@ -69,11 +74,16 @@ extension MainVC: NSTableViewDelegate {
 
 extension MainVC: DidTapOnButtonFromCustomStackOfButtonsDelegate {
     func didTapOnButton(withTitle title: String) {
+        defer {
+            updateUI()
+            selectedElement = nil
+        }
+        guard !HistoryManager.shared.selectedRelationshipSameToPrevious(stringRelationship: title) else {backButtonTapped(self); return}
         guard let select = selectedElement else {return}
 
         arrayOfElements = select.choosed(selected: title)
         HistoryManager.shared.addNewObject(newObj: select)//should be only first
         HistoryManager.shared.currentObject = PickerElement.selected(string: title)//should be only second, don't change because it can broke logic
-        updateUI()
+
     }
 }
