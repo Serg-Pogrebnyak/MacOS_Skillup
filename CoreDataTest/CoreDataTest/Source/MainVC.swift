@@ -21,7 +21,7 @@ class MainVC: NSViewController {
         buttonsStackView.delegate = self
         HistoryManager.shared.currentObject = PickerElement.company
         arrayOfElements = CoreManager.shared.getAllCompany()
-        buttonsStackView.generateButtonsStack(arrayOfTitle: arrayOfElements.first!.arrayOfRelationShip())
+        myTableView.menu = createContextMenuItems()
     }
     
     @IBAction func didTapAddNewUserButton(_ sender: Any) {
@@ -63,10 +63,36 @@ class MainVC: NSViewController {
 
     func updateUI() {
         guard !arrayOfElements.isEmpty else {
-            buttonsStackView.hideAllButtons()
+            myTableView.menu = nil
             return
         }
-        buttonsStackView.generateButtonsStack(arrayOfTitle: arrayOfElements.first!.arrayOfRelationShip())
+        myTableView.menu = createContextMenuItems()
+    }
+
+    func createContextMenuItems() -> NSMenu {
+        let arrayOfRelationShip = arrayOfElements.first!.arrayOfRelationShip()
+        let contextMenu = NSMenu()
+        contextMenu.delegate = self
+        for title in arrayOfRelationShip {
+            let zoomIn = NSMenuItem(title: title, action: #selector(didTapOnButton(_:)), keyEquivalent: "")
+            contextMenu.addItem(zoomIn)
+        }
+        return contextMenu
+    }
+
+    @objc func didTapOnButton(_ sender: NSMenuItem) {
+        defer {
+            updateUI()
+        }
+
+        guard myTableView.clickedRow >= 0 else {return}
+        selectedElement = arrayOfElements[myTableView.clickedRow]
+        guard !HistoryManager.shared.selectedRelationshipSameToPrevious(stringRelationship: sender.title) else {backButtonTapped(self); return}
+
+        arrayOfElements = selectedElement!.choosed(selected: sender.title)
+        HistoryManager.shared.addNewObject(newObj: selectedElement!)//should be only first
+        HistoryManager.shared.currentObject = PickerElement.selected(string: sender.title)//should be only second, don't change because it can broke logic
+
     }
 }
 
@@ -88,6 +114,12 @@ extension MainVC: DidTapOnButtonFromCustomStackOfButtonsDelegate {
         arrayOfElements = select.choosed(selected: title)
         HistoryManager.shared.addNewObject(newObj: select)//should be only first
         HistoryManager.shared.currentObject = PickerElement.selected(string: title)//should be only second, don't change because it can broke logic
+    }
+}
 
+extension MainVC: NSMenuDelegate {
+    func menuWillOpen(_ menu: NSMenu) {
+        guard myTableView.clickedRow < 0 else {return}
+        menu.cancelTracking()
     }
 }
