@@ -8,6 +8,7 @@
 
 import Foundation
 import CoreData
+import Cocoa
 
 class Office: NSManagedObject {
 
@@ -35,6 +36,13 @@ class Office: NSManagedObject {
 }
 
 extension Office: TableViewFirstColumnProtocol {
+        func handleTapOnCreateNew(selected: String) {
+        print("handle")
+    }
+    
+    func getMenuForNewItems() -> [String] {
+        return []
+    }
     @objc dynamic public var displayNameForTableView: String {
         return name
     }

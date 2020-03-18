@@ -747,7 +747,7 @@
                             <splitView arrangesAllSubviews="NO" dividerStyle="thin" vertical="YES" translatesAutoresizingMaskIntoConstraints="NO" id="94s-S9-Ny1">
                                 <rect key="frame" x="130" y="8" width="849" height="445"/>
                                 <subviews>
-                                    <customView misplaced="YES" id="ePd-IY-rRG">
+                                    <customView id="ePd-IY-rRG">
                                         <rect key="frame" x="0.0" y="0.0" width="849" height="445"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                         <subviews>
@@ -766,7 +766,7 @@
                                                             <tableColumns>
                                                                 <tableColumn width="844" minWidth="40" maxWidth="1000" id="Ovg-67-m5f">
                                                                     <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="center" title="Company">
-                                                                        <font key="font" metaFont="message" size="11"/>
+                                                                        <font key="font" metaFont="label" size="11"/>
                                                                         <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
                                                                         <color key="backgroundColor" name="headerColor" catalog="System" colorSpace="catalog"/>
                                                                     </tableHeaderCell>
@@ -777,33 +777,33 @@
                                                                     </textFieldCell>
                                                                     <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                                     <prototypeCellViews>
-                                                                        <tableCellView id="zrW-sz-PAK">
+                                                                        <tableCellView id="IcL-Y2-XK8">
                                                                             <rect key="frame" x="1" y="1" width="844" height="17"/>
                                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                             <subviews>
-                                                                                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9WN-vR-SYt">
+                                                                                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GeH-iW-fFa">
                                                                                     <rect key="frame" x="0.0" y="0.0" width="844" height="17"/>
                                                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                                                                                    <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" title="1" id="9hS-jz-Sqo">
+                                                                                    <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" title="Table View Cell" id="Gvf-Nq-SEj">
                                                                                         <font key="font" metaFont="system"/>
                                                                                         <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                                                                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                                                                     </textFieldCell>
                                                                                     <connections>
-                                                                                        <binding destination="zrW-sz-PAK" name="value" keyPath="objectValue.displayNameForTableView" id="Bgk-rA-hF1"/>
+                                                                                        <binding destination="IcL-Y2-XK8" name="value" keyPath="objectValue.displayNameForTableView" id="Af5-r6-F3g"/>
                                                                                     </connections>
                                                                                 </textField>
                                                                             </subviews>
                                                                             <connections>
-                                                                                <outlet property="textField" destination="9WN-vR-SYt" id="vRW-LC-YTu"/>
+                                                                                <outlet property="textField" destination="GeH-iW-fFa" id="BTP-IH-PpM"/>
                                                                             </connections>
                                                                         </tableCellView>
                                                                     </prototypeCellViews>
                                                                 </tableColumn>
                                                             </tableColumns>
                                                             <connections>
-                                                                <binding destination="XfG-lQ-9wD" name="content" keyPath="self.arrayOfElements" id="LPj-mT-afm"/>
-                                                                <outlet property="delegate" destination="XfG-lQ-9wD" id="0FH-0r-b1T"/>
+                                                                <binding destination="XfG-lQ-9wD" name="content" keyPath="self.arrayOfElements" id="pjA-nO-XWi"/>
+                                                                <outlet property="delegate" destination="XfG-lQ-9wD" id="e72-yQ-fCL"/>
                                                             </connections>
                                                         </tableView>
                                                     </subviews>
@@ -871,7 +871,6 @@
                     </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
-                <userDefaultsController representsSharedInstance="YES" id="kXy-Z0-NQp"/>
             </objects>
             <point key="canvasLocation" x="39.5" y="864"/>
         </scene>

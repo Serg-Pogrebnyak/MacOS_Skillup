@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0B49A6C92422484200823960 /* CreateNewTeamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B49A6C82422484200823960 /* CreateNewTeamViewController.swift */; };
+		DE46CA49241B6E3E00444043 /* CreateNewOfficeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE46CA48241B6E3E00444043 /* CreateNewOfficeViewController.swift */; };
+		DE46CA4B241B7E2B00444043 /* NewOfficeUIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE46CA4A241B7E2B00444043 /* NewOfficeUIModel.swift */; };
+		DE46CA4D241B9F8700444043 /* TestWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE46CA4C241B9F8700444043 /* TestWindowController.swift */; };
+		DE46CA4F241BCD4700444043 /* CreatorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE46CA4E241BCD4700444043 /* CreatorManager.swift */; };
 		DE91D677240FC355003F7D93 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE91D676240FC355003F7D93 /* AppDelegate.swift */; };
 		DE91D67C240FC355003F7D93 /* CoreDataTest.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DE91D67A240FC355003F7D93 /* CoreDataTest.xcdatamodeld */; };
 		DE91D67E240FC357003F7D93 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE91D67D240FC357003F7D93 /* Assets.xcassets */; };
@@ -19,11 +24,17 @@
 		DE91D69C24113B43003F7D93 /* Room.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE91D69B24113B43003F7D93 /* Room.swift */; };
 		DE91D69E24113B9E003F7D93 /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE91D69D24113B9E003F7D93 /* Team.swift */; };
 		DE91D6A024113C52003F7D93 /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE91D69F24113C52003F7D93 /* Group.swift */; };
+		DEB591B8241A9F3E0087D51E /* CustomWindow.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DEB591B7241A9F3E0087D51E /* CustomWindow.storyboard */; };
 		DEDDA99A24114CB60027CF2C /* TableViewFirstColumnProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDDA99924114CB60027CF2C /* TableViewFirstColumnProtocol.swift */; };
 		DEDDA99C241800AF0027CF2C /* HistoryManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDDA99B241800AF0027CF2C /* HistoryManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0B49A6C82422484200823960 /* CreateNewTeamViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNewTeamViewController.swift; sourceTree = "<group>"; };
+		DE46CA48241B6E3E00444043 /* CreateNewOfficeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNewOfficeViewController.swift; sourceTree = "<group>"; };
+		DE46CA4A241B7E2B00444043 /* NewOfficeUIModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewOfficeUIModel.swift; sourceTree = "<group>"; };
+		DE46CA4C241B9F8700444043 /* TestWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestWindowController.swift; sourceTree = "<group>"; };
+		DE46CA4E241BCD4700444043 /* CreatorManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatorManager.swift; sourceTree = "<group>"; };
 		DE91D673240FC355003F7D93 /* CoreDataTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoreDataTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE91D676240FC355003F7D93 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DE91D67B240FC355003F7D93 /* CoreDataTest.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreDataTest.xcdatamodel; sourceTree = "<group>"; };
@@ -39,6 +50,7 @@
 		DE91D69B24113B43003F7D93 /* Room.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Room.swift; sourceTree = "<group>"; };
 		DE91D69D24113B9E003F7D93 /* Team.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Team.swift; sourceTree = "<group>"; };
 		DE91D69F24113C52003F7D93 /* Group.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
+		DEB591B7241A9F3E0087D51E /* CustomWindow.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CustomWindow.storyboard; sourceTree = "<group>"; };
 		DEDDA99924114CB60027CF2C /* TableViewFirstColumnProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewFirstColumnProtocol.swift; sourceTree = "<group>"; };
 		DEDDA99B241800AF0027CF2C /* HistoryManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -54,6 +66,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0B49A6C62422479B00823960 /* Core Data */ = {
+			isa = PBXGroup;
+			children = (
+				DEDDA99924114CB60027CF2C /* TableViewFirstColumnProtocol.swift */,
+				DE91D697241139B2003F7D93 /* Company.swift */,
+				DE91D69924113A46003F7D93 /* Office.swift */,
+				DE91D69B24113B43003F7D93 /* Room.swift */,
+				DE91D69D24113B9E003F7D93 /* Team.swift */,
+				DE91D69F24113C52003F7D93 /* Group.swift */,
+				DE91D68F240FD9AF003F7D93 /* Employee.swift */,
+			);
+			path = "Core Data";
+			sourceTree = "<group>";
+		};
+		0B49A6C7242247AD00823960 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				DE46CA4E241BCD4700444043 /* CreatorManager.swift */,
+				DE46CA4A241B7E2B00444043 /* NewOfficeUIModel.swift */,
+				DEDDA99B241800AF0027CF2C /* HistoryManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
 		DE91D66A240FC355003F7D93 = {
 			isa = PBXGroup;
 			children = (
@@ -90,6 +126,9 @@
 			children = (
 				DE91D676240FC355003F7D93 /* AppDelegate.swift */,
 				DE91D693240FDA27003F7D93 /* MainVC.swift */,
+				DE46CA48241B6E3E00444043 /* CreateNewOfficeViewController.swift */,
+				0B49A6C82422484200823960 /* CreateNewTeamViewController.swift */,
+				DE46CA4C241B9F8700444043 /* TestWindowController.swift */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -97,14 +136,8 @@
 		DE91D68A240FD827003F7D93 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				DE91D697241139B2003F7D93 /* Company.swift */,
-				DE91D69924113A46003F7D93 /* Office.swift */,
-				DE91D69B24113B43003F7D93 /* Room.swift */,
-				DE91D69D24113B9E003F7D93 /* Team.swift */,
-				DE91D69F24113C52003F7D93 /* Group.swift */,
-				DE91D68F240FD9AF003F7D93 /* Employee.swift */,
-				DEDDA99924114CB60027CF2C /* TableViewFirstColumnProtocol.swift */,
-				DEDDA99B241800AF0027CF2C /* HistoryManager.swift */,
+				0B49A6C7242247AD00823960 /* Managers */,
+				0B49A6C62422479B00823960 /* Core Data */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -113,6 +146,7 @@
 			isa = PBXGroup;
 			children = (
 				DE91D67F240FC357003F7D93 /* Main.storyboard */,
+				DEB591B7241A9F3E0087D51E /* CustomWindow.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -208,6 +242,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DE91D67E240FC357003F7D93 /* Assets.xcassets in Resources */,
+				DEB591B8241A9F3E0087D51E /* CustomWindow.storyboard in Resources */,
 				DE91D681240FC357003F7D93 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -219,6 +254,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DE46CA49241B6E3E00444043 /* CreateNewOfficeViewController.swift in Sources */,
 				DEDDA99C241800AF0027CF2C /* HistoryManager.swift in Sources */,
 				DE91D69E24113B9E003F7D93 /* Team.swift in Sources */,
 				DE91D690240FD9AF003F7D93 /* Employee.swift in Sources */,
@@ -226,8 +262,12 @@
 				DE91D69A24113A46003F7D93 /* Office.swift in Sources */,
 				DE91D6A024113C52003F7D93 /* Group.swift in Sources */,
 				DE91D69C24113B43003F7D93 /* Room.swift in Sources */,
+				DE46CA4B241B7E2B00444043 /* NewOfficeUIModel.swift in Sources */,
+				DE46CA4D241B9F8700444043 /* TestWindowController.swift in Sources */,
+				DE46CA4F241BCD4700444043 /* CreatorManager.swift in Sources */,
 				DE91D694240FDA27003F7D93 /* MainVC.swift in Sources */,
 				DE91D67C240FC355003F7D93 /* CoreDataTest.xcdatamodeld in Sources */,
+				0B49A6C92422484200823960 /* CreateNewTeamViewController.swift in Sources */,
 				DE91D677240FC355003F7D93 /* AppDelegate.swift in Sources */,
 				DE91D692240FD9C7003F7D93 /* CoreManager.swift in Sources */,
 				DE91D698241139B2003F7D93 /* Company.swift in Sources */,

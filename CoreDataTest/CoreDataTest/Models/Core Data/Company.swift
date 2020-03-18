@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Cocoa
 import CoreData
 
 class Company: NSManagedObject {
@@ -15,6 +16,11 @@ class Company: NSManagedObject {
     @NSManaged public var offices: NSSet
     @NSManaged public var teams: NSSet
     @NSManaged public var idLocal: String
+    
+    private enum CreateNew: String {
+        case office = "Create new office"
+        case team = "Create new team"
+    }
 
     init(companyName: String) {
         let entity = NSEntityDescription.entity(forEntityName: "Company", in: CoreManager.shared.coreManagerContext)!
@@ -33,6 +39,7 @@ class Company: NSManagedObject {
 }
 
 extension Company: TableViewFirstColumnProtocol {
+
     @objc dynamic public var displayNameForTableView: String {
         return name
     }
@@ -63,28 +70,37 @@ extension Company: TableViewFirstColumnProtocol {
             fatalError("wrong element")
         }
     }
-
-    func addNewElement(element: TableViewFirstColumnProtocol) {
-        if element is Office {
-            addNewOffice(newOffice: element as! Office)
-        } else if element is Team {
-            addNewTeam(newTeam: element as! Team)
-        } else {
-            fatalError("element no found")
+    
+    func getMenuForNewItems() -> [String] {
+        return [CreateNew.office.rawValue, CreateNew.team.rawValue]
+    }
+    
+    func handleTapOnCreateNew(selected: String) {
+        switch selected {
+        case CreateNew.office.rawValue:
+            addNewOffice()
+        case CreateNew.team.rawValue:
+            addNewTeam()
+        default:
+            fatalError("element not found")
+        }
+    }
+    
+    private func addNewOffice() {
+        CreatorManager.shared.createNewOffice { (office) in
+            let mutableCopy = self.offices.mutableCopy() as! NSMutableSet
+            mutableCopy.add(office)
+            self.offices = mutableCopy
+            //CoreManager.shared.saveContext()
         }
     }
 
-    private func addNewOffice(newOffice: Office) {
-        let mutableCopy = self.offices.mutableCopy() as! NSMutableSet
-        mutableCopy.add(newOffice)
-        self.offices = mutableCopy
-        CoreManager.shared.saveContext()
-    }
-
-    private func addNewTeam(newTeam: Team) {
-        let mutableCopy = self.teams.mutableCopy() as! NSMutableSet
-        mutableCopy.add(newTeam)
-        self.offices = mutableCopy
-        CoreManager.shared.saveContext()
+    private func addNewTeam() {
+        CreatorManager.shared.createNewTeam { (team) in
+            let mutableCopy = self.teams.mutableCopy() as! NSMutableSet
+            mutableCopy.add(team)
+            self.teams = mutableCopy
+            //CoreManager.shared.saveContext()
+        }
     }
 }

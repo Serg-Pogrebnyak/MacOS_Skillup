@@ -19,30 +19,21 @@ class MainVC: NSViewController {
         super.viewDidLoad()
         HistoryManager.shared.currentObject = PickerElement.company
         arrayOfElements = CoreManager.shared.getAllCompany()
-        myTableView.menu = createContextMenuItems()
+        
+        updateUI()
     }
     
     @IBAction func didTapAddNewUserButton(_ sender: Any) {
         switch HistoryManager.shared.currentObject {
         case .company:
             arrayOfElements.append(Company(companyName: userNameTextField.stringValue))
-        case .offices:
-            guard let select = selectedElement else {return}
-            let newElement = Office.init(officeName: userNameTextField.stringValue, address: "Karazina 2")
-            select.addNewElement(element: newElement)
-            arrayOfElements.append(newElement)
-        case .rooms:
-            guard let select = selectedElement else {return}
-            let newElement = Room.init(roomNumber: userNameTextField.stringValue)
-            select.addNewElement(element: newElement)
-            arrayOfElements.append(newElement)
         default:
             fatalError("not found")
         }
         userNameTextField.stringValue = ""
         updateUI()
     }
-    
+
     @IBAction func saveDataToCoreData(_ sender: Any) {
         CoreManager.shared.saveContext()
     }
@@ -68,15 +59,37 @@ class MainVC: NSViewController {
     }
 
     func createContextMenuItems() -> NSMenu {
-        let arrayOfRelationShip = arrayOfElements.first!.arrayOfRelationShip()
+        let selectedElement = arrayOfElements.first!
         let contextMenu = NSMenu()
         contextMenu.delegate = self
+        
+        let arrayOfRelationShip = selectedElement.arrayOfRelationShip()
         for title in arrayOfRelationShip {
-            let zoomIn = NSMenuItem(title: title, action: #selector(didTapOnButton(_:)), keyEquivalent: "")
-            contextMenu.addItem(zoomIn)
+            let newMenuItem = NSMenuItem(title: title, action: #selector(didTapOnButton(_:)), keyEquivalent: "")
+            contextMenu.addItem(newMenuItem)
+        }
+        
+        contextMenu.addItem(NSMenuItem.separator())
+        
+        let arrayOfNewButton = selectedElement.getMenuForNewItems()
+        for title in arrayOfNewButton {
+            let newMenuItem = NSMenuItem(title: title, action: #selector(didTapOnButtonCreateNew(_:)), keyEquivalent: "")
+            contextMenu.addItem(newMenuItem)
         }
         return contextMenu
     }
+    
+    @objc func didTapOnButtonCreateNew(_ sender: NSMenuItem) {
+        defer {
+            updateUI()
+        }
+
+        guard myTableView.clickedRow >= 0 else {return}
+        selectedElement = arrayOfElements[myTableView.clickedRow]
+        selectedElement?.handleTapOnCreateNew(selected: sender.title)
+    }
+    
+
 
     @objc func didTapOnButton(_ sender: NSMenuItem) {
         defer {
@@ -90,7 +103,6 @@ class MainVC: NSViewController {
         arrayOfElements = selectedElement!.choosed(selected: sender.title)
         HistoryManager.shared.addNewObject(newObj: selectedElement!)//should be only first
         HistoryManager.shared.currentObject = PickerElement.selected(string: sender.title)//should be only second, don't change because it can broke logic
-
     }
 }
 

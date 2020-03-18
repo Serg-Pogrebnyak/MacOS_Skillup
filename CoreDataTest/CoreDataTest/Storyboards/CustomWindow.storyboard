@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="15705"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Window Controller-->
+        <scene sceneID="2zu-hP-PX0">
+            <objects>
+                <windowController storyboardIdentifier="TestWindowController" id="Ki9-e0-HUw" customClass="TestWindowController" customModule="CoreDataTest" customModuleProvider="target" sceneMemberID="viewController">
+                    <window key="window" title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" id="8Wf-HA-JiG">
+                        <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
+                        <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
+                        <rect key="contentRect" x="294" y="313" width="480" height="270"/>
+                        <rect key="screenRect" x="0.0" y="0.0" width="1920" height="1057"/>
+                        <connections>
+                            <outlet property="delegate" destination="Ki9-e0-HUw" id="Lb6-au-FzV"/>
+                        </connections>
+                    </window>
+                </windowController>
+                <customObject id="zhT-4n-Mh6" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="434" y="19"/>
+        </scene>
+        <!--Create New Office View Controller-->
+        <scene sceneID="j5B-b1-VhF">
+            <objects>
+                <viewController storyboardIdentifier="CreateNewOfficeVC" id="Y0A-cF-8on" customClass="CreateNewOfficeViewController" customModule="CoreDataTest" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="1mm-LF-wOq">
+                        <rect key="frame" x="0.0" y="0.0" width="264" height="179"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="dCe-9r-VvE">
+                                <rect key="frame" x="144" y="97" width="100" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="wB5-bR-4ig"/>
+                                </constraints>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" id="LDJ-i4-VUA">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Mr1-Qq-dCq">
+                                <rect key="frame" x="86" y="49" width="92" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="80" id="8Lt-qX-OO5"/>
+                                </constraints>
+                                <buttonCell key="cell" type="push" title="Create" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="nry-mo-EoV">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="didTapCreateButton:" target="Y0A-cF-8on" id="jo7-QC-CdE"/>
+                                </connections>
+                            </button>
+                            <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="n01-m5-bSC">
+                                <rect key="frame" x="144" y="138" width="100" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="9el-QH-bpW"/>
+                                </constraints>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" id="89O-HO-jqj">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="NMD-Dk-Td1">
+                                <rect key="frame" x="13" y="141" width="108" height="16"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" title="new office name:" id="Zsv-6R-NBP">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="iwS-1c-9u9">
+                                <rect key="frame" x="13" y="100" width="108" height="16"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" title="new address:" id="a2n-be-cDf">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="n01-m5-bSC" firstAttribute="centerY" secondItem="NMD-Dk-Td1" secondAttribute="centerY" id="1wO-kw-CUu"/>
+                            <constraint firstAttribute="trailing" secondItem="dCe-9r-VvE" secondAttribute="trailing" constant="20" id="2PQ-C4-DLu"/>
+                            <constraint firstItem="dCe-9r-VvE" firstAttribute="top" secondItem="n01-m5-bSC" secondAttribute="bottom" constant="20" id="7rp-Ja-wYJ"/>
+                            <constraint firstItem="n01-m5-bSC" firstAttribute="top" secondItem="1mm-LF-wOq" secondAttribute="top" constant="20" id="8Vd-rV-GHS"/>
+                            <constraint firstAttribute="trailing" secondItem="n01-m5-bSC" secondAttribute="trailing" constant="20" id="E0t-w3-eKR"/>
+                            <constraint firstItem="NMD-Dk-Td1" firstAttribute="leading" secondItem="1mm-LF-wOq" secondAttribute="leading" constant="15" id="Efv-zu-jjd"/>
+                            <constraint firstItem="n01-m5-bSC" firstAttribute="leading" secondItem="NMD-Dk-Td1" secondAttribute="trailing" constant="25" id="FgH-TQ-XYt"/>
+                            <constraint firstItem="iwS-1c-9u9" firstAttribute="leading" secondItem="1mm-LF-wOq" secondAttribute="leading" constant="15" id="Gt2-sZ-j8X"/>
+                            <constraint firstItem="Mr1-Qq-dCq" firstAttribute="top" secondItem="dCe-9r-VvE" secondAttribute="bottom" constant="20" id="Iqd-Ut-twi"/>
+                            <constraint firstItem="Mr1-Qq-dCq" firstAttribute="centerX" secondItem="1mm-LF-wOq" secondAttribute="centerX" id="iJg-Yu-RiT"/>
+                            <constraint firstItem="dCe-9r-VvE" firstAttribute="centerY" secondItem="iwS-1c-9u9" secondAttribute="centerY" id="kMg-eS-e44"/>
+                            <constraint firstItem="dCe-9r-VvE" firstAttribute="leading" secondItem="iwS-1c-9u9" secondAttribute="trailing" constant="25" id="oOr-oB-C56"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="officeAddress" destination="dCe-9r-VvE" id="aVq-Nr-w3I"/>
+                        <outlet property="officeName" destination="n01-m5-bSC" id="dnm-hV-bT0"/>
+                    </connections>
+                </viewController>
+                <customObject id="Ws5-NU-ntH" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="962" y="-35.5"/>
+        </scene>
+        <!--Create New Team View Controller-->
+        <scene sceneID="wGP-iv-IQW">
+            <objects>
+                <viewController storyboardIdentifier="CreateNewTeamVC" id="zY5-qK-oEn" customClass="CreateNewTeamViewController" customModule="CoreDataTest" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="2bj-tY-M4S">
+                        <rect key="frame" x="0.0" y="0.0" width="200" height="150"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="zwK-Cg-MWy">
+                                <rect key="frame" x="50" y="73" width="100" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="72w-61-qN9"/>
+                                </constraints>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" id="z0v-HK-Sze">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="LCW-24-gXa">
+                                <rect key="frame" x="54" y="25" width="92" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="80" id="NcL-4r-ufw"/>
+                                </constraints>
+                                <buttonCell key="cell" type="push" title="Create" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="825-5K-X4e">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="didTapCreateButton:" target="zY5-qK-oEn" id="er9-tt-H4r"/>
+                                </connections>
+                            </button>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="jvj-3N-8XH">
+                                <rect key="frame" x="48" y="114" width="104" height="16"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" title="new team name:" id="7VG-sp-kVQ">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="jvj-3N-8XH" firstAttribute="top" secondItem="2bj-tY-M4S" secondAttribute="top" constant="20" id="JXu-Bc-mwL"/>
+                            <constraint firstItem="zwK-Cg-MWy" firstAttribute="centerX" secondItem="2bj-tY-M4S" secondAttribute="centerX" id="NJ2-mQ-A76"/>
+                            <constraint firstItem="LCW-24-gXa" firstAttribute="top" secondItem="zwK-Cg-MWy" secondAttribute="bottom" constant="20" id="Qox-qn-YMV"/>
+                            <constraint firstItem="zwK-Cg-MWy" firstAttribute="top" secondItem="jvj-3N-8XH" secondAttribute="bottom" constant="20" id="ZYo-CU-OBJ"/>
+                            <constraint firstItem="jvj-3N-8XH" firstAttribute="centerX" secondItem="2bj-tY-M4S" secondAttribute="centerX" id="gs2-84-RvK"/>
+                            <constraint firstItem="LCW-24-gXa" firstAttribute="centerX" secondItem="2bj-tY-M4S" secondAttribute="centerX" id="j9z-uq-heP"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="teamName" destination="zwK-Cg-MWy" id="KYo-eP-jii"/>
+                    </connections>
+                </viewController>
+                <customObject id="bBw-Aw-QYE" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="931" y="180"/>
+        </scene>
+    </scenes>
+</document>

@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Cocoa
 
 enum PickerElement: String {
     case company
@@ -35,5 +36,6 @@ enum PickerElement: String {
     func loadAllRelationShipObjetcsBy(typeOfObject type: String) -> [TableViewFirstColumnProtocol]
     func arrayOfRelationShip() -> [String]
     func choosed(selected: String) -> [TableViewFirstColumnProtocol]
-    func addNewElement(element: TableViewFirstColumnProtocol)
+    func getMenuForNewItems() -> [String]
+    func handleTapOnCreateNew(selected: String)
 }

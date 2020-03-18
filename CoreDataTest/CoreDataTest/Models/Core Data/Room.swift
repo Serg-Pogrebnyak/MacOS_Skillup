@@ -8,6 +8,7 @@
 
 import Foundation
 import CoreData
+import Cocoa
 
 class Room: NSManagedObject {
     @NSManaged public var roomNumber: String
@@ -32,6 +33,14 @@ class Room: NSManagedObject {
 }
 
 extension Room: TableViewFirstColumnProtocol {
+    func handleTapOnCreateNew(selected: String) {
+        print("handle")
+    }
+    
+    func getMenuForNewItems() -> [String] {
+        return []
+    }
+
     @objc dynamic public var displayNameForTableView: String {
         return roomNumber
     }
