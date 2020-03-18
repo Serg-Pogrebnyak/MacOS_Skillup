@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		0B49A6C92422484200823960 /* CreateNewTeamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B49A6C82422484200823960 /* CreateNewTeamViewController.swift */; };
 		0B8AF2B024225C6000927500 /* CreateNewRoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B8AF2AE24225C6000927500 /* CreateNewRoomViewController.swift */; };
+		0B8AF2B32422662300927500 /* CreateNewGroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B8AF2B22422662300927500 /* CreateNewGroupViewController.swift */; };
 		DE46CA49241B6E3E00444043 /* CreateNewOfficeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE46CA48241B6E3E00444043 /* CreateNewOfficeViewController.swift */; };
 		DE46CA4B241B7E2B00444043 /* NewOfficeUIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE46CA4A241B7E2B00444043 /* NewOfficeUIModel.swift */; };
 		DE46CA4D241B9F8700444043 /* TestWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE46CA4C241B9F8700444043 /* TestWindowController.swift */; };
@@ -33,6 +34,7 @@
 /* Begin PBXFileReference section */
 		0B49A6C82422484200823960 /* CreateNewTeamViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNewTeamViewController.swift; sourceTree = "<group>"; };
 		0B8AF2AE24225C6000927500 /* CreateNewRoomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNewRoomViewController.swift; sourceTree = "<group>"; };
+		0B8AF2B22422662300927500 /* CreateNewGroupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNewGroupViewController.swift; sourceTree = "<group>"; };
 		DE46CA48241B6E3E00444043 /* CreateNewOfficeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNewOfficeViewController.swift; sourceTree = "<group>"; };
 		DE46CA4A241B7E2B00444043 /* NewOfficeUIModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewOfficeUIModel.swift; sourceTree = "<group>"; };
 		DE46CA4C241B9F8700444043 /* TestWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestWindowController.swift; sourceTree = "<group>"; };
@@ -131,6 +133,7 @@
 				DE46CA48241B6E3E00444043 /* CreateNewOfficeViewController.swift */,
 				0B49A6C82422484200823960 /* CreateNewTeamViewController.swift */,
 				0B8AF2AE24225C6000927500 /* CreateNewRoomViewController.swift */,
+				0B8AF2B22422662300927500 /* CreateNewGroupViewController.swift */,
 				DE46CA4C241B9F8700444043 /* TestWindowController.swift */,
 			);
 			path = Source;
@@ -271,6 +274,7 @@
 				DE46CA4F241BCD4700444043 /* CreatorManager.swift in Sources */,
 				DE91D694240FDA27003F7D93 /* MainVC.swift in Sources */,
 				DE91D67C240FC355003F7D93 /* CoreDataTest.xcdatamodeld in Sources */,
+				0B8AF2B32422662300927500 /* CreateNewGroupViewController.swift in Sources */,
 				0B49A6C92422484200823960 /* CreateNewTeamViewController.swift in Sources */,
 				DE91D677240FC355003F7D93 /* AppDelegate.swift in Sources */,
 				DE91D692240FD9C7003F7D93 /* CoreManager.swift in Sources */,

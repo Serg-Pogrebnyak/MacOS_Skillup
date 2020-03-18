@@ -15,6 +15,10 @@ class Room: NSManagedObject {
     @NSManaged public var teams: NSSet
     @NSManaged public var office: Office
     @NSManaged public var idLocal: String
+    
+    private enum CreateNew: String {
+        case team = "Create new team"
+    }
 
     init(roomNumber: String) {
         let entity = NSEntityDescription.entity(forEntityName: "Room", in: CoreManager.shared.coreManagerContext)!
@@ -33,13 +37,6 @@ class Room: NSManagedObject {
 }
 
 extension Room: TableViewFirstColumnProtocol {
-    func handleTapOnCreateNew(selected: String) {
-        print("handle")
-    }
-    
-    func getMenuForNewItems() -> [String] {
-        return []
-    }
 
     @objc dynamic public var displayNameForTableView: String {
         return roomNumber
@@ -69,18 +66,25 @@ extension Room: TableViewFirstColumnProtocol {
         }
     }
 
-    func addNewElement(element: TableViewFirstColumnProtocol) {
-        if element is Team {
-            addNewTeam(newTeam: element as! Team)
-        } else {
-            fatalError("element no found")
+    func getMenuForNewItems() -> [String] {
+        return [CreateNew.team.rawValue]
+    }
+    
+    func handleTapOnCreateNew(selected: String) {
+        switch selected {
+        case CreateNew.team.rawValue:
+            addNewTeam()
+        default:
+            fatalError("element not found")
         }
     }
 
-    private func addNewTeam(newTeam: Team) {
-        let mutableCopy = self.teams.mutableCopy() as! NSMutableSet
-        mutableCopy.add(newTeam)
-        self.teams = mutableCopy
-        CoreManager.shared.saveContext()
+    private func addNewTeam() {
+        CreatorManager.shared.createNewTeam { (team) in
+            let mutableCopy = self.teams.mutableCopy() as! NSMutableSet
+            mutableCopy.add(team)
+            self.teams = mutableCopy
+            //CoreManager.shared.saveContext()
+        }
     }
 }

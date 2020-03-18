@@ -38,7 +38,7 @@
                                     <constraint firstAttribute="width" constant="100" id="wB5-bR-4ig"/>
                                 </constraints>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" id="LDJ-i4-VUA">
-                                    <font key="font" metaFont="label" size="13"/>
+                                    <font key="font" metaFont="system"/>
                                     <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
@@ -50,7 +50,7 @@
                                 </constraints>
                                 <buttonCell key="cell" type="push" title="Create" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="nry-mo-EoV">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" metaFont="label" size="13"/>
+                                    <font key="font" metaFont="system"/>
                                 </buttonCell>
                                 <connections>
                                     <action selector="didTapCreateButton:" target="Y0A-cF-8on" id="jo7-QC-CdE"/>
@@ -62,7 +62,7 @@
                                     <constraint firstAttribute="width" constant="100" id="9el-QH-bpW"/>
                                 </constraints>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" id="89O-HO-jqj">
-                                    <font key="font" metaFont="label" size="13"/>
+                                    <font key="font" metaFont="system"/>
                                     <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
@@ -70,7 +70,7 @@
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="NMD-Dk-Td1">
                                 <rect key="frame" x="13" y="141" width="108" height="16"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" title="new office name:" id="Zsv-6R-NBP">
-                                    <font key="font" metaFont="label" size="13"/>
+                                    <font key="font" metaFont="system"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
@@ -78,7 +78,7 @@
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="iwS-1c-9u9">
                                 <rect key="frame" x="13" y="100" width="108" height="16"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" title="new address:" id="a2n-be-cDf">
-                                    <font key="font" metaFont="label" size="13"/>
+                                    <font key="font" metaFont="system"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
@@ -122,7 +122,7 @@
                                     <constraint firstAttribute="width" constant="100" id="72w-61-qN9"/>
                                 </constraints>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" id="z0v-HK-Sze">
-                                    <font key="font" metaFont="label" size="13"/>
+                                    <font key="font" metaFont="system"/>
                                     <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
@@ -134,7 +134,7 @@
                                 </constraints>
                                 <buttonCell key="cell" type="push" title="Create" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="825-5K-X4e">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" metaFont="label" size="13"/>
+                                    <font key="font" metaFont="system"/>
                                 </buttonCell>
                                 <connections>
                                     <action selector="didTapCreateButton:" target="zY5-qK-oEn" id="er9-tt-H4r"/>
@@ -143,7 +143,7 @@
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="jvj-3N-8XH">
                                 <rect key="frame" x="48" y="114" width="104" height="16"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" title="new team name:" id="7VG-sp-kVQ">
-                                    <font key="font" metaFont="label" size="13"/>
+                                    <font key="font" metaFont="system"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
@@ -180,7 +180,7 @@
                                     <constraint firstAttribute="width" constant="100" id="UeO-1a-RWb"/>
                                 </constraints>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" id="gs9-qF-Z0l">
-                                    <font key="font" metaFont="label" size="13"/>
+                                    <font key="font" metaFont="system"/>
                                     <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
@@ -192,7 +192,7 @@
                                 </constraints>
                                 <buttonCell key="cell" type="push" title="Create" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="ORH-05-WRs">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" metaFont="label" size="13"/>
+                                    <font key="font" metaFont="system"/>
                                 </buttonCell>
                                 <connections>
                                     <action selector="didTapCreateButton:" target="K2J-cf-mSf" id="ijU-hH-izr"/>
@@ -201,7 +201,7 @@
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="bq6-be-hag">
                                 <rect key="frame" x="48" y="114" width="105" height="16"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" title="new room name:" id="WGB-CP-h2g">
-                                    <font key="font" metaFont="label" size="13"/>
+                                    <font key="font" metaFont="system"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
@@ -223,6 +223,64 @@
                 <customObject id="jAa-d9-0Os" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="931" y="396"/>
+        </scene>
+        <!--Create New Group View Controller-->
+        <scene sceneID="Ckv-hz-iXY">
+            <objects>
+                <viewController storyboardIdentifier="CreateNewGroupVC" id="3ae-b9-YJI" customClass="CreateNewGroupViewController" customModule="CoreDataTest" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="KIu-9L-JTS">
+                        <rect key="frame" x="0.0" y="0.0" width="200" height="150"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="zzf-85-cju">
+                                <rect key="frame" x="50" y="73" width="100" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="9xl-sF-eDT"/>
+                                </constraints>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" id="bRW-HY-UI3">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="PW0-dZ-vcd">
+                                <rect key="frame" x="54" y="25" width="92" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="80" id="PT1-lK-2Cy"/>
+                                </constraints>
+                                <buttonCell key="cell" type="push" title="Create" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="RFV-uB-mBY">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="didTapCreateButton:" target="3ae-b9-YJI" id="6x5-xu-uAf"/>
+                                </connections>
+                            </button>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="shU-xU-2Hi">
+                                <rect key="frame" x="46" y="114" width="109" height="16"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" title="new group name:" id="Hjf-FY-0e8">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="shU-xU-2Hi" firstAttribute="top" secondItem="KIu-9L-JTS" secondAttribute="top" constant="20" id="1us-TP-UhM"/>
+                            <constraint firstItem="shU-xU-2Hi" firstAttribute="centerX" secondItem="KIu-9L-JTS" secondAttribute="centerX" id="bBe-Yi-NBq"/>
+                            <constraint firstItem="PW0-dZ-vcd" firstAttribute="top" secondItem="zzf-85-cju" secondAttribute="bottom" constant="20" id="epe-l7-xcS"/>
+                            <constraint firstItem="PW0-dZ-vcd" firstAttribute="centerX" secondItem="KIu-9L-JTS" secondAttribute="centerX" id="lch-AX-RSZ"/>
+                            <constraint firstItem="zzf-85-cju" firstAttribute="top" secondItem="shU-xU-2Hi" secondAttribute="bottom" constant="20" id="ptU-CW-8Rt"/>
+                            <constraint firstItem="zzf-85-cju" firstAttribute="centerX" secondItem="KIu-9L-JTS" secondAttribute="centerX" id="qQk-TB-wA3"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="groupName" destination="zzf-85-cju" id="QN4-Y9-SsE"/>
+                    </connections>
+                </viewController>
+                <customObject id="rm9-oF-f3v" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="931" y="613"/>
         </scene>
     </scenes>
 </document>

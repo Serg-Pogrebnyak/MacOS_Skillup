@@ -32,4 +32,11 @@ class CreatorManager {
         vc?.callback = callback
         NewOfficeUIModel.shared.showVCForNewOffice(vc: vc!)
     }
+    
+    func createNewGroup(callback:@escaping (Group) -> Void) {
+        let storyboard = NSStoryboard(name: "CustomWindow",bundle: nil)
+        let vc = storyboard.instantiateController(withIdentifier: "CreateNewGroupVC") as? CreateNewGroupViewController
+        vc?.callback = callback
+        NewOfficeUIModel.shared.showVCForNewOffice(vc: vc!)
+    }
 }

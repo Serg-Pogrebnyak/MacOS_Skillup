@@ -14,6 +14,7 @@ enum PickerElement: String {
     case offices
     case rooms
     case teams
+    case groups
 
     static func selected(string: String) -> Self {
         switch string {
@@ -25,6 +26,8 @@ enum PickerElement: String {
             return PickerElement.teams
         case PickerElement.rooms.rawValue:
             return PickerElement.rooms
+        case PickerElement.groups.rawValue:
+            return PickerElement.groups
         default:
             fatalError("wrong element")
         }

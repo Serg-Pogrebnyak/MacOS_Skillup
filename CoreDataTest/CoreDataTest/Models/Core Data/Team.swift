@@ -15,6 +15,10 @@ class Team: NSManagedObject {
     @NSManaged public var groups: NSSet
     @NSManaged public var company: Company
     @NSManaged public var idLocal: String
+    
+    private enum CreateNew: String {
+        case group = "Create new group"
+    }
 
     init(teamName: String) {
         let entity = NSEntityDescription.entity(forEntityName: "Team", in: CoreManager.shared.coreManagerContext)!
@@ -29,5 +33,58 @@ class Team: NSManagedObject {
 
     @nonobjc public func fetchRequest() -> NSFetchRequest<Team> {
         return NSFetchRequest<Team>(entityName: "Team")
+    }
+}
+
+extension Team: TableViewFirstColumnProtocol {
+
+    @objc dynamic public var displayNameForTableView: String {
+        return name
+    }
+
+    func loadAllRelationShipObjetcsBy(typeOfObject type: String) -> [TableViewFirstColumnProtocol] {
+        let selectedElement = PickerElement.selected(string: type)
+        switch selectedElement {
+        case .groups:
+            return self.groups.allObjects as! [TableViewFirstColumnProtocol]
+        default:
+            fatalError("wrong select")
+        }
+    }
+
+    func arrayOfRelationShip() -> [String] {
+        return [PickerElement.rooms.rawValue, PickerElement.groups.rawValue]
+    }
+
+    func choosed(selected: String) -> [TableViewFirstColumnProtocol] {
+        let selectedElement = PickerElement.selected(string: selected)
+        switch selectedElement {
+        case .groups:
+            return self.groups.allObjects as! [TableViewFirstColumnProtocol]
+        default:
+            fatalError("wrong select")
+        }
+    }
+
+    func getMenuForNewItems() -> [String] {
+        return [CreateNew.group.rawValue]
+    }
+    
+    func handleTapOnCreateNew(selected: String) {
+        switch selected {
+        case CreateNew.group.rawValue:
+            addNewGroup()
+        default:
+            fatalError("element not found")
+        }
+    }
+
+    private func addNewGroup() {
+        CreatorManager.shared.createNewGroup { (group) in
+            let mutableCopy = self.groups.mutableCopy() as! NSMutableSet
+            mutableCopy.add(group)
+            self.groups = mutableCopy
+            //CoreManager.shared.saveContext()
+        }
     }
 }
