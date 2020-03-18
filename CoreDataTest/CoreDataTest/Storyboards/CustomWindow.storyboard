@@ -282,5 +282,63 @@
             </objects>
             <point key="canvasLocation" x="931" y="613"/>
         </scene>
+        <!--Create New Person View Controller-->
+        <scene sceneID="Z2n-Y8-se1">
+            <objects>
+                <viewController storyboardIdentifier="CreateNewPersonVC" id="d3t-1D-fcU" customClass="CreateNewPersonViewController" customModule="CoreDataTest" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="41e-pi-O7h">
+                        <rect key="frame" x="0.0" y="0.0" width="200" height="150"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="yrS-E3-cdP">
+                                <rect key="frame" x="50" y="73" width="100" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="pMe-pP-IcO"/>
+                                </constraints>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" id="BEw-6X-f9z">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ajZ-DE-6ZZ">
+                                <rect key="frame" x="54" y="25" width="92" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="80" id="pFC-6e-iKz"/>
+                                </constraints>
+                                <buttonCell key="cell" type="push" title="Create" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="MHH-4I-VIQ">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="didTapCreateButton:" target="d3t-1D-fcU" id="Ip0-7w-66h"/>
+                                </connections>
+                            </button>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="VZ5-Ox-c73">
+                                <rect key="frame" x="43" y="114" width="115" height="16"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" title="new person name:" id="bnX-db-PV0">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="VZ5-Ox-c73" firstAttribute="centerX" secondItem="41e-pi-O7h" secondAttribute="centerX" id="660-yk-ar1"/>
+                            <constraint firstItem="ajZ-DE-6ZZ" firstAttribute="top" secondItem="yrS-E3-cdP" secondAttribute="bottom" constant="20" id="F3p-me-1DX"/>
+                            <constraint firstItem="VZ5-Ox-c73" firstAttribute="top" secondItem="41e-pi-O7h" secondAttribute="top" constant="20" id="MOq-c8-YOi"/>
+                            <constraint firstItem="yrS-E3-cdP" firstAttribute="centerX" secondItem="41e-pi-O7h" secondAttribute="centerX" id="kih-nE-cdH"/>
+                            <constraint firstItem="ajZ-DE-6ZZ" firstAttribute="centerX" secondItem="41e-pi-O7h" secondAttribute="centerX" id="wva-hS-qBc"/>
+                            <constraint firstItem="yrS-E3-cdP" firstAttribute="top" secondItem="VZ5-Ox-c73" secondAttribute="bottom" constant="20" id="zAD-t6-pQY"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="personName" destination="yrS-E3-cdP" id="Y2w-Nk-96o"/>
+                    </connections>
+                </viewController>
+                <customObject id="QFK-hD-NtH" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="931" y="845"/>
+        </scene>
     </scenes>
 </document>

@@ -29,3 +29,30 @@ class Employee: NSManagedObject {
         return NSFetchRequest<Employee>(entityName: "Employee")
     }
 }
+
+extension Employee: TableViewFirstColumnProtocol {
+
+    @objc dynamic public var displayNameForTableView: String {
+        return name
+    }
+
+    func loadAllRelationShipObjetcsBy(typeOfObject type: String) -> [TableViewFirstColumnProtocol] {
+        return []
+    }
+
+    func arrayOfRelationShip() -> [String] {
+        return [PickerElement.groups.rawValue]
+    }
+
+    func choosed(selected: String) -> [TableViewFirstColumnProtocol] {
+        return []
+    }
+
+    func getMenuForNewItems() -> [String] {
+        return []
+    }
+    
+    func handleTapOnCreateNew(selected: String) {
+        fatalError("element not found")
+    }
+}
