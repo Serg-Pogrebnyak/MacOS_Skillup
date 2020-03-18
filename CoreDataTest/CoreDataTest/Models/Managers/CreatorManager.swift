@@ -19,6 +19,13 @@ class CreatorManager {
         NewOfficeUIModel.shared.showVCForNewOffice(vc: vc!)
     }
     
+    func createNewRoom(callback:@escaping (Room) -> Void) {
+        let storyboard = NSStoryboard(name: "CustomWindow",bundle: nil)
+        let vc = storyboard.instantiateController(withIdentifier: "CreateNewRoomVC") as? CreateNewRoomViewController
+        vc?.callback = callback
+        NewOfficeUIModel.shared.showVCForNewOffice(vc: vc!)
+    }
+    
     func createNewTeam(callback:@escaping (Team) -> Void) {
         let storyboard = NSStoryboard(name: "CustomWindow",bundle: nil)
         let vc = storyboard.instantiateController(withIdentifier: "CreateNewTeamVC") as? CreateNewTeamViewController

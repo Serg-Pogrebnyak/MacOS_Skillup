@@ -17,6 +17,10 @@ class Office: NSManagedObject {
     @NSManaged public var company: Company
     @NSManaged public var rooms: NSSet
     @NSManaged public var idLocal: String
+    
+    private enum CreateNew: String {
+        case room = "Create new room"
+    }
 
     init(officeName: String, address: String) {
         let entity = NSEntityDescription.entity(forEntityName: "Office", in: CoreManager.shared.coreManagerContext)!
@@ -36,13 +40,7 @@ class Office: NSManagedObject {
 }
 
 extension Office: TableViewFirstColumnProtocol {
-        func handleTapOnCreateNew(selected: String) {
-        print("handle")
-    }
-    
-    func getMenuForNewItems() -> [String] {
-        return []
-    }
+
     @objc dynamic public var displayNameForTableView: String {
         return name
     }
@@ -69,19 +67,26 @@ extension Office: TableViewFirstColumnProtocol {
             fatalError("wrong element")
         }
     }
-
-    func addNewElement(element: TableViewFirstColumnProtocol) {
-        if element is Room {
-            addNewRoom(newRoom: element as! Room)
-        } else {
-            fatalError("element no found")
+    
+    func getMenuForNewItems() -> [String] {
+        return [CreateNew.room.rawValue]
+    }
+    
+    func handleTapOnCreateNew(selected: String) {
+        switch selected {
+        case CreateNew.room.rawValue:
+            addNewRoom()
+        default:
+            fatalError("element not found")
         }
     }
 
-    private func addNewRoom(newRoom: Room) {
-        let mutableCopy = self.rooms.mutableCopy() as! NSMutableSet
-        mutableCopy.add(newRoom)
-        self.rooms = mutableCopy
-        CoreManager.shared.saveContext()
+    private func addNewRoom() {
+        CreatorManager.shared.createNewRoom { (room) in
+            let mutableCopy = self.rooms.mutableCopy() as! NSMutableSet
+            mutableCopy.add(room)
+            self.rooms = mutableCopy
+            //CoreManager.shared.saveContext()
+        }
     }
 }
