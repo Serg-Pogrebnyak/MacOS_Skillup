@@ -51,6 +51,7 @@ class MainVC: NSViewController {
     }
 
     func updateUI() {
+        myTableView.tableColumns.first!.headerCell.stringValue = HistoryManager.shared.currentObject.rawValue
         guard !arrayOfElements.isEmpty else {
             myTableView.menu = nil
             return
