@@ -81,9 +81,14 @@ extension Room: TableViewFirstColumnProtocol {
 
     private func addNewTeam() {
         CreatorManager.shared.createNewTeam { (team) in
+            team.company = self.office.company
             let mutableCopy = self.teams.mutableCopy() as! NSMutableSet
             mutableCopy.add(team)
             self.teams = mutableCopy
+            
+            let mutuableCopy = self.office.company.teams.mutableCopy() as! NSMutableSet
+            mutuableCopy.add(team)
+            self.office.company.teams = mutuableCopy
             //CoreManager.shared.saveContext()
         }
     }
