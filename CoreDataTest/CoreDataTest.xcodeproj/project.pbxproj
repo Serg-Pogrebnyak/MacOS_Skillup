@@ -11,6 +11,7 @@
 		0B8AF2B024225C6000927500 /* CreateNewRoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B8AF2AE24225C6000927500 /* CreateNewRoomViewController.swift */; };
 		0B8AF2B32422662300927500 /* CreateNewGroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B8AF2B22422662300927500 /* CreateNewGroupViewController.swift */; };
 		0B8AF2B52422739900927500 /* CreateNewPersonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B8AF2B42422739900927500 /* CreateNewPersonViewController.swift */; };
+		0BF701582422856B000139EE /* CreateNewTeamFromCompanyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BF701572422856B000139EE /* CreateNewTeamFromCompanyViewController.swift */; };
 		DE46CA49241B6E3E00444043 /* CreateNewOfficeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE46CA48241B6E3E00444043 /* CreateNewOfficeViewController.swift */; };
 		DE46CA4B241B7E2B00444043 /* NewOfficeUIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE46CA4A241B7E2B00444043 /* NewOfficeUIModel.swift */; };
 		DE46CA4D241B9F8700444043 /* TestWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE46CA4C241B9F8700444043 /* TestWindowController.swift */; };
@@ -37,6 +38,7 @@
 		0B8AF2AE24225C6000927500 /* CreateNewRoomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNewRoomViewController.swift; sourceTree = "<group>"; };
 		0B8AF2B22422662300927500 /* CreateNewGroupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNewGroupViewController.swift; sourceTree = "<group>"; };
 		0B8AF2B42422739900927500 /* CreateNewPersonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNewPersonViewController.swift; sourceTree = "<group>"; };
+		0BF701572422856B000139EE /* CreateNewTeamFromCompanyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNewTeamFromCompanyViewController.swift; sourceTree = "<group>"; };
 		DE46CA48241B6E3E00444043 /* CreateNewOfficeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNewOfficeViewController.swift; sourceTree = "<group>"; };
 		DE46CA4A241B7E2B00444043 /* NewOfficeUIModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewOfficeUIModel.swift; sourceTree = "<group>"; };
 		DE46CA4C241B9F8700444043 /* TestWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestWindowController.swift; sourceTree = "<group>"; };
@@ -134,6 +136,7 @@
 				DE91D693240FDA27003F7D93 /* MainVC.swift */,
 				DE46CA48241B6E3E00444043 /* CreateNewOfficeViewController.swift */,
 				0B49A6C82422484200823960 /* CreateNewTeamViewController.swift */,
+				0BF701572422856B000139EE /* CreateNewTeamFromCompanyViewController.swift */,
 				0B8AF2AE24225C6000927500 /* CreateNewRoomViewController.swift */,
 				0B8AF2B22422662300927500 /* CreateNewGroupViewController.swift */,
 				0B8AF2B42422739900927500 /* CreateNewPersonViewController.swift */,
@@ -267,6 +270,7 @@
 				DE46CA49241B6E3E00444043 /* CreateNewOfficeViewController.swift in Sources */,
 				0B8AF2B52422739900927500 /* CreateNewPersonViewController.swift in Sources */,
 				DEDDA99C241800AF0027CF2C /* HistoryManager.swift in Sources */,
+				0BF701582422856B000139EE /* CreateNewTeamFromCompanyViewController.swift in Sources */,
 				DE91D69E24113B9E003F7D93 /* Team.swift in Sources */,
 				DE91D690240FD9AF003F7D93 /* Employee.swift in Sources */,
 				DEDDA99A24114CB60027CF2C /* TableViewFirstColumnProtocol.swift in Sources */,

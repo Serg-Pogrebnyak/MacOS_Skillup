@@ -33,6 +33,14 @@ class CreatorManager {
         NewOfficeUIModel.shared.showVCForNewOffice(vc: vc!)
     }
     
+    func createNewTeamFromCompany(roomArray: [TableViewFirstColumnProtocol], callback:@escaping (Team) -> Void) {
+        let storyboard = NSStoryboard(name: "CustomWindow",bundle: nil)
+        let vc = storyboard.instantiateController(withIdentifier: "CreateNewTeamFromCompanyVC") as? CreateNewTeamFromCompanyViewController
+        vc?.callback = callback
+        vc?.arrayOfElements = roomArray
+        NewOfficeUIModel.shared.showVCForNewOffice(vc: vc!)
+    }
+    
     func createNewGroup(callback:@escaping (Group) -> Void) {
         let storyboard = NSStoryboard(name: "CustomWindow",bundle: nil)
         let vc = storyboard.instantiateController(withIdentifier: "CreateNewGroupVC") as? CreateNewGroupViewController

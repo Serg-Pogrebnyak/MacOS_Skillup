@@ -61,6 +61,8 @@ extension Team: TableViewFirstColumnProtocol {
         switch selectedElement {
         case .groups:
             return self.groups.allObjects as! [TableViewFirstColumnProtocol]
+        case .rooms:
+            return self.rooms.allObjects as! [TableViewFirstColumnProtocol]
         default:
             fatalError("wrong select")
         }

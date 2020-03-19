@@ -14,8 +14,8 @@ class TestWindowController: NSWindowController, NSWindowDelegate {
 
     override func windowDidLoad() {
         super.windowDidLoad()
-        self.window?.minSize = NSSize(width: 200, height: 200)
-        self.window?.maxSize = NSSize(width: 200, height: 200)
+        self.window?.minSize = NSSize(width: 400, height: 400)
+        self.window?.maxSize = NSSize(width: 400, height: 400)
     }
 
     func windowWillClose(_ notification: Notification) {

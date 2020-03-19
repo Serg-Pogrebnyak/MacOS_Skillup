@@ -96,7 +96,14 @@ extension Company: TableViewFirstColumnProtocol {
     }
 
     private func addNewTeam() {
-        CreatorManager.shared.createNewTeam { (team) in
+        var allRooms = [TableViewFirstColumnProtocol]()
+        for office in (self.offices.allObjects as! [TableViewFirstColumnProtocol]) {
+            let rooms = (office as! Office).rooms.allObjects as! [TableViewFirstColumnProtocol]
+            for room in rooms {
+                allRooms.append(room)
+            }
+        }
+        CreatorManager.shared.createNewTeamFromCompany(roomArray: allRooms) { (team) in
             let mutableCopy = self.teams.mutableCopy() as! NSMutableSet
             mutableCopy.add(team)
             self.teams = mutableCopy
