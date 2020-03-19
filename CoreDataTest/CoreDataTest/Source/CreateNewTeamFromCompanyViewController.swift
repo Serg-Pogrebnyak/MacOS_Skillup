@@ -33,7 +33,11 @@ class CreateNewTeamFromCompanyViewController: NSViewController {
             callback?(newTeam)
             self.view.window?.close()
         } else {
-            print("❌error")
+            let alert = NSAlert.init()
+            alert.messageText = "Error"
+            alert.informativeText = "Please select room or if you don't have it: add office after that add room and try again"
+            alert.addButton(withTitle: "understand")
+            alert.runModal()
         }
     }
     
