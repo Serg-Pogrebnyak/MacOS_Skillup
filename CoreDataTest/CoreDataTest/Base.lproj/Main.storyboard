@@ -709,7 +709,35 @@
                     <view key="view" id="m2S-Jp-Qdl">
                         <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="PK4-rM-lZA" customClass="CustomView" customModule="CoreDataTest" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="480" height="220"/>
+                            </customView>
+                            <slider verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="044-QH-K82">
+                                <rect key="frame" x="138" y="233" width="204" height="19"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="z4U-ns-cUx"/>
+                                </constraints>
+                                <sliderCell key="cell" state="on" alignment="left" maxValue="100" doubleValue="50" tickMarkPosition="above" sliderType="linear" id="frE-6W-KfN"/>
+                                <connections>
+                                    <action selector="sliderChangeValue:" target="XfG-lQ-9wD" id="zxS-we-Iap"/>
+                                </connections>
+                            </slider>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="PK4-rM-lZA" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="50" id="3ZI-qw-jch"/>
+                            <constraint firstAttribute="trailing" secondItem="PK4-rM-lZA" secondAttribute="trailing" id="Ikq-5x-MCH"/>
+                            <constraint firstItem="044-QH-K82" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="20" id="LIJ-ky-gmg"/>
+                            <constraint firstAttribute="bottom" secondItem="PK4-rM-lZA" secondAttribute="bottom" id="WyQ-oZ-nti"/>
+                            <constraint firstItem="044-QH-K82" firstAttribute="centerX" secondItem="m2S-Jp-Qdl" secondAttribute="centerX" id="fJU-uy-Q7y"/>
+                            <constraint firstItem="PK4-rM-lZA" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" id="gjD-37-7OC"/>
+                            <constraint firstItem="PK4-rM-lZA" firstAttribute="top" secondItem="044-QH-K82" secondAttribute="bottom" constant="15" id="vfj-1t-9xu"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="customView" destination="PK4-rM-lZA" id="s1v-eK-9XQ"/>
+                        <outlet property="sliderBrashSize" destination="044-QH-K82" id="c7J-we-4g5"/>
+                    </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
