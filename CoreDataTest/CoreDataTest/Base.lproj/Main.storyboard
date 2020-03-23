@@ -724,12 +724,17 @@
                                     <action selector="sliderChangeValue:" target="XfG-lQ-9wD" id="zxS-we-Iap"/>
                                 </connections>
                             </slider>
+                            <switch horizontalHuggingPriority="750" verticalHuggingPriority="750" baseWritingDirection="leftToRight" alignment="left" translatesAutoresizingMaskIntoConstraints="NO" id="XtD-j8-Lqw">
+                                <rect key="frame" x="18" y="230" width="42" height="24"/>
+                            </switch>
                         </subviews>
                         <constraints>
                             <constraint firstItem="PK4-rM-lZA" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="50" id="3ZI-qw-jch"/>
+                            <constraint firstItem="044-QH-K82" firstAttribute="centerY" secondItem="XtD-j8-Lqw" secondAttribute="centerY" id="73B-Z8-NlT"/>
                             <constraint firstAttribute="trailing" secondItem="PK4-rM-lZA" secondAttribute="trailing" id="Ikq-5x-MCH"/>
                             <constraint firstItem="044-QH-K82" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="20" id="LIJ-ky-gmg"/>
                             <constraint firstAttribute="bottom" secondItem="PK4-rM-lZA" secondAttribute="bottom" id="WyQ-oZ-nti"/>
+                            <constraint firstItem="XtD-j8-Lqw" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" id="ZNx-km-f2X"/>
                             <constraint firstItem="044-QH-K82" firstAttribute="centerX" secondItem="m2S-Jp-Qdl" secondAttribute="centerX" id="fJU-uy-Q7y"/>
                             <constraint firstItem="PK4-rM-lZA" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" id="gjD-37-7OC"/>
                             <constraint firstItem="PK4-rM-lZA" firstAttribute="top" secondItem="044-QH-K82" secondAttribute="bottom" constant="15" id="vfj-1t-9xu"/>
@@ -739,6 +744,7 @@
                         <outlet property="colorPickker" destination="rMe-BB-dim" id="omF-r2-OG6"/>
                         <outlet property="customView" destination="PK4-rM-lZA" id="s1v-eK-9XQ"/>
                         <outlet property="sliderBrashSize" destination="044-QH-K82" id="c7J-we-4g5"/>
+                        <outlet property="switchDrawOrClear" destination="XtD-j8-Lqw" id="zQA-sS-pCs"/>
                     </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>

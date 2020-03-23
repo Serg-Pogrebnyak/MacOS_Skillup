@@ -10,6 +10,7 @@ import Cocoa
 
 class ViewController: NSViewController {
 
+    @IBOutlet weak fileprivate var switchDrawOrClear: NSSwitch!
     @IBOutlet weak fileprivate var customView: CustomView!
     @IBOutlet weak fileprivate var sliderBrashSize: NSSlider!
     override func viewDidLoad() {
@@ -19,11 +20,19 @@ class ViewController: NSViewController {
     }
     
     override func mouseDown(with event: NSEvent) {
-        customView.lastPoint = event.locationInWindow
+        if switchDrawOrClear.state == .on {
+            customView.lastPoint = event.locationInWindow
+        } else {
+            customView.clear(atPoint: event.locationInWindow)
+        }
     }
     
     override func mouseDragged(with event: NSEvent) {
-        customView.addPoint(point: event.locationInWindow)
+        if switchDrawOrClear.state == .on {
+            customView.addPoint(point: event.locationInWindow)
+        } else {
+            customView.clear(atPoint: event.locationInWindow)
+        }
     }
     
     @IBAction func sliderChangeValue(_ sender: NSSlider) {
