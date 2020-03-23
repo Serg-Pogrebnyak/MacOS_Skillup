@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0BA4BCF52428A8E000D06805 /* RootWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BA4BCF42428A8E000D06805 /* RootWindowController.swift */; };
 		0BB6B98B2424C4BD0037587F /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BB6B98A2424C4BD0037587F /* CustomView.swift */; };
 		DE91D677240FC355003F7D93 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE91D676240FC355003F7D93 /* AppDelegate.swift */; };
 		DE91D679240FC355003F7D93 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE91D678240FC355003F7D93 /* ViewController.swift */; };
@@ -15,6 +16,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0BA4BCF42428A8E000D06805 /* RootWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootWindowController.swift; sourceTree = "<group>"; };
 		0BB6B98A2424C4BD0037587F /* CustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomView.swift; sourceTree = "<group>"; };
 		DE91D673240FC355003F7D93 /* CoreDataTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoreDataTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE91D676240FC355003F7D93 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -55,6 +57,7 @@
 			isa = PBXGroup;
 			children = (
 				DE91D676240FC355003F7D93 /* AppDelegate.swift */,
+				0BA4BCF42428A8E000D06805 /* RootWindowController.swift */,
 				DE91D678240FC355003F7D93 /* ViewController.swift */,
 				DE91D67D240FC357003F7D93 /* Assets.xcassets */,
 				DE91D67F240FC357003F7D93 /* Main.storyboard */,
@@ -135,6 +138,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0BB6B98B2424C4BD0037587F /* CustomView.swift in Sources */,
+				0BA4BCF52428A8E000D06805 /* RootWindowController.swift in Sources */,
 				DE91D679240FC355003F7D93 /* ViewController.swift in Sources */,
 				DE91D677240FC355003F7D93 /* AppDelegate.swift in Sources */,
 			);
@@ -204,7 +208,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -258,7 +262,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = macosx;
@@ -281,7 +285,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				PRODUCT_BUNDLE_IDENTIFIER = SergP.CoreDataTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -302,7 +306,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				PRODUCT_BUNDLE_IDENTIFIER = SergP.CoreDataTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;

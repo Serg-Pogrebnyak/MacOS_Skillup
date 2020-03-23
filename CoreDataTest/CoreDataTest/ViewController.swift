@@ -10,8 +10,8 @@ import Cocoa
 
 class ViewController: NSViewController {
 
-    @IBOutlet weak var customView: CustomView!
-    @IBOutlet weak var sliderBrashSize: NSSlider!
+    @IBOutlet weak fileprivate var customView: CustomView!
+    @IBOutlet weak fileprivate var sliderBrashSize: NSSlider!
     override func viewDidLoad() {
         super.viewDidLoad()
         sliderBrashSize.intValue = Int32(customView.brashSize)
@@ -39,6 +39,43 @@ class ViewController: NSViewController {
         }
         return event
     }
-
+    
 }
 
+extension ViewController: NSTouchBarDelegate {
+    override func makeTouchBar() -> NSTouchBar? {
+        let touchBar = NSTouchBar()
+        touchBar.delegate = self
+        touchBar.customizationIdentifier = .travelBar
+        touchBar.defaultItemIdentifiers = [.colorLabelItem]
+        touchBar.customizationAllowedItemIdentifiers = [.colorLabelItem]
+        return touchBar
+    }
+    
+    func touchBar(_ touchBar: NSTouchBar, makeItemForIdentifier identifier: NSTouchBarItem.Identifier) -> NSTouchBarItem? {
+        switch identifier {
+        case .colorLabelItem:
+          let colorPicker = NSColorPickerTouchBarItem(identifier: identifier)
+          colorPicker.action = #selector(selectedColor(_:))
+          return colorPicker
+        default:
+          return nil
+        }
+    }
+    
+    @objc fileprivate func selectedColor(_ sender: Any) {
+        if let colorPicker = sender as? NSColorPickerTouchBarItem {
+            customView.brashColor = colorPicker.color.cgColor
+        } else {
+            fatalError("wrong sender")
+        }
+    }
+}
+
+extension NSTouchBarItem.Identifier {
+    static let colorLabelItem = NSTouchBarItem.Identifier("com.razeware.color")
+}
+
+extension NSTouchBar.CustomizationIdentifier {
+    static let travelBar = NSTouchBar.CustomizationIdentifier("com.razeware.ViewController.TravelBar")
+}
