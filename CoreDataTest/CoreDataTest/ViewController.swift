@@ -46,12 +46,15 @@ class ViewController: NSViewController {
     @IBAction func saveToDesktop(_ sender: Any) {
         layersView.saveSelf()
     }
+    
     @IBAction func checkBoxTapped(_ sender: NSButton) {
         let index = layersTableView.row(for: sender)
         
         if sender.state == .off {
+            arrayOfLayers[index].isHideLayer = true
             arrayOfLayers[index].view.isHidden = true
         } else {
+            arrayOfLayers[index].isHideLayer = false
             arrayOfLayers[index].view.isHidden = false
         }
     }
@@ -79,6 +82,19 @@ class ViewController: NSViewController {
         return event
     }
     
+}
+
+extension ViewController: NSTableViewDelegate {
+    func tableView(_ tableView: NSTableView, viewFor tableColumn: NSTableColumn?, row: Int) -> NSView? {
+        let cell = tableView.makeView(withIdentifier: NSUserInterfaceItemIdentifier(rawValue: "LayerCell"), owner: self) as? NSTableCellView
+        (cell?.subviews[0] as? NSTextField)?.stringValue = arrayOfLayers[row].layerName
+        if arrayOfLayers[row].isHideLayer {
+            (cell?.subviews[1] as? NSButton)?.state = .off
+        } else {
+            (cell?.subviews[1] as? NSButton)?.state = .on
+        }
+        return cell
+    }
 }
 
 extension ViewController: NSTouchBarDelegate {
