@@ -706,14 +706,14 @@
             <objects>
                 <viewController title="FirstScreen" id="XfG-lQ-9wD" customClass="ViewController" customModule="CoreDataTest" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" misplaced="YES" id="m2S-Jp-Qdl">
-                        <rect key="frame" x="0.0" y="0.0" width="826" height="248"/>
+                        <rect key="frame" x="0.0" y="0.0" width="826" height="118"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <customView translatesAutoresizingMaskIntoConstraints="NO" id="PK4-rM-lZA" customClass="LayersManager" customModule="CoreDataTest" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="676" height="42"/>
+                                <rect key="frame" x="0.0" y="0.0" width="676" height="68"/>
                             </customView>
                             <slider verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="044-QH-K82">
-                                <rect key="frame" x="311" y="55" width="204" height="19"/>
+                                <rect key="frame" x="311" y="81" width="204" height="19"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="z4U-ns-cUx"/>
                                 </constraints>
@@ -723,16 +723,16 @@
                                 </connections>
                             </slider>
                             <switch horizontalHuggingPriority="750" verticalHuggingPriority="750" baseWritingDirection="leftToRight" alignment="left" state="on" translatesAutoresizingMaskIntoConstraints="NO" id="XtD-j8-Lqw">
-                                <rect key="frame" x="18" y="52" width="42" height="24"/>
+                                <rect key="frame" x="18" y="78" width="42" height="24"/>
                             </switch>
                             <scrollView autohidesScrollers="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EPW-iP-kMs">
-                                <rect key="frame" x="676" y="0.0" width="150" height="42"/>
+                                <rect key="frame" x="676" y="0.0" width="150" height="68"/>
                                 <clipView key="contentView" id="41M-sp-gMh">
-                                    <rect key="frame" x="1" y="0.0" width="148" height="41"/>
+                                    <rect key="frame" x="1" y="0.0" width="148" height="67"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnSelection="YES" multipleSelection="NO" autosaveColumns="NO" rowSizeStyle="automatic" headerView="enu-FY-HyT" viewBased="YES" id="aim-eC-b9Q">
-                                            <rect key="frame" x="0.0" y="0.0" width="148" height="19"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="148" height="42"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <size key="intercellSpacing" width="3" height="2"/>
                                             <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -740,7 +740,7 @@
                                             <tableColumns>
                                                 <tableColumn width="145" minWidth="40" maxWidth="1000" id="Qpb-KZ-9Zw">
                                                     <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border">
-                                                        <font key="font" metaFont="controlContent" size="11"/>
+                                                        <font key="font" metaFont="label" size="11"/>
                                                         <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
                                                         <color key="backgroundColor" name="headerColor" catalog="System" colorSpace="catalog"/>
                                                     </tableHeaderCell>
@@ -807,7 +807,7 @@
                                     <rect key="frame" x="1" y="204" width="148" height="15"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
-                                <scroller key="verticalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" horizontal="NO" id="bcN-4m-uoQ">
+                                <scroller key="verticalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" doubleValue="0.33333333333333331" horizontal="NO" id="bcN-4m-uoQ">
                                     <rect key="frame" x="224" y="17" width="15" height="102"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
@@ -817,7 +817,7 @@
                                 </tableHeaderView>
                             </scrollView>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="TlQ-qo-nbo">
-                                <rect key="frame" x="716" y="47" width="96" height="32"/>
+                                <rect key="frame" x="716" y="73" width="96" height="32"/>
                                 <buttonCell key="cell" type="push" title="add layer" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Oca-Mp-tKj">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
@@ -827,7 +827,7 @@
                                 </connections>
                             </button>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="xix-tg-rLP">
-                                <rect key="frame" x="646" y="47" width="70" height="32"/>
+                                <rect key="frame" x="646" y="73" width="70" height="32"/>
                                 <buttonCell key="cell" type="push" title="Save" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="vkZ-8T-Oc1">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
@@ -867,7 +867,7 @@
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="182" y="735"/>
+            <point key="canvasLocation" x="182" y="811.5"/>
         </scene>
     </scenes>
 </document>

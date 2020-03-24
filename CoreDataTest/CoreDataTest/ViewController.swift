@@ -15,7 +15,7 @@ class ViewController: NSViewController {
     @IBOutlet weak fileprivate var switchDrawOrClear: NSSwitch!
     //@IBOutlet weak fileprivate var customView: CustomView!
     @IBOutlet weak fileprivate var sliderBrashSize: NSSlider!
-    @objc dynamic var arrayOfLayers = [CustomView]()
+    @objc dynamic var arrayOfLayers = [LayerModel]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,20 +26,20 @@ class ViewController: NSViewController {
     override func mouseDown(with event: NSEvent) {
         if switchDrawOrClear.state == .on {
             guard layersTableView.selectedRow >= 0 else {return}
-            arrayOfLayers[layersTableView.selectedRow].lastPoint = event.locationInWindow
+            arrayOfLayers[layersTableView.selectedRow].view.lastPoint = event.locationInWindow
         } else {
             guard layersTableView.selectedRow >= 0 else {return}
-            arrayOfLayers[layersTableView.selectedRow].clear(atPoint: event.locationInWindow)
+            arrayOfLayers[layersTableView.selectedRow].view.clear(atPoint: event.locationInWindow)
         }
     }
     
     override func mouseDragged(with event: NSEvent) {
         if switchDrawOrClear.state == .on {
             guard layersTableView.selectedRow >= 0 else {return}
-            arrayOfLayers[layersTableView.selectedRow].addPoint(point: event.locationInWindow)
+            arrayOfLayers[layersTableView.selectedRow].view.addPoint(point: event.locationInWindow)
         } else {
             guard layersTableView.selectedRow >= 0 else {return}
-            arrayOfLayers[layersTableView.selectedRow].clear(atPoint: event.locationInWindow)
+            arrayOfLayers[layersTableView.selectedRow].view.clear(atPoint: event.locationInWindow)
         }
     }
     
@@ -50,30 +50,30 @@ class ViewController: NSViewController {
         let index = layersTableView.row(for: sender)
         
         if sender.state == .off {
-            arrayOfLayers[index].isHidden = true
+            arrayOfLayers[index].view.isHidden = true
         } else {
-            arrayOfLayers[index].isHidden = false
+            arrayOfLayers[index].view.isHidden = false
         }
     }
     
     @IBAction func addNewLayer(_ sender: Any) {
-        let view = CustomView(frame: layersView.frame)
-        layersView.addSubview(view)
-        arrayOfLayers.append(view)
-        view.widthAnchor.constraint(equalTo: layersView.widthAnchor).isActive = true
-        view.heightAnchor.constraint(equalTo: layersView.heightAnchor).isActive = true
+        let layerModel = LayerModel(frame: layersView.frame)
+        layersView.addSubview(layerModel.view)
+        arrayOfLayers.append(layerModel)
+        layerModel.view.widthAnchor.constraint(equalTo: layersView.widthAnchor).isActive = true
+        layerModel.view.heightAnchor.constraint(equalTo: layersView.heightAnchor).isActive = true
     }
     
     @IBAction func sliderChangeValue(_ sender: NSSlider) {
         guard layersTableView.selectedRow >= 0 else {return}
-        arrayOfLayers[layersTableView.selectedRow].brashSize = CGFloat(sender.intValue)
+        arrayOfLayers[layersTableView.selectedRow].view.brashSize = CGFloat(sender.intValue)
     }
     
     func myKeyDownEvent(event: NSEvent) -> NSEvent?
     {
         let modifierFlags = event.modifierFlags
         if modifierFlags.contains(NSEvent.ModifierFlags.command) && event.keyCode == 6 && layersTableView.selectedRow >= 0 {
-            arrayOfLayers[layersTableView.selectedRow].removeLastLayer()
+            arrayOfLayers[layersTableView.selectedRow].view.removeLastLayer()
             return nil
         }
         return event
@@ -105,7 +105,7 @@ extension ViewController: NSTouchBarDelegate {
     @objc fileprivate func selectedColor(_ sender: Any) {
         if let colorPicker = sender as? NSColorPickerTouchBarItem {
             guard layersTableView.selectedRow >= 0 else {return}
-            arrayOfLayers[layersTableView.selectedRow].brashColor = colorPicker.color.cgColor
+            arrayOfLayers[layersTableView.selectedRow].view.brashColor = colorPicker.color.cgColor
         } else {
             fatalError("wrong sender")
         }
