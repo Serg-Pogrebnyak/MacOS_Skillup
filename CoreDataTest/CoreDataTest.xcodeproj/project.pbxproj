@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0BA4BCF52428A8E000D06805 /* RootWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BA4BCF42428A8E000D06805 /* RootWindowController.swift */; };
+		0BA4BCF92429039900D06805 /* LayersManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BA4BCF82429039900D06805 /* LayersManager.swift */; };
 		0BB6B98B2424C4BD0037587F /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BB6B98A2424C4BD0037587F /* CustomView.swift */; };
 		DE91D677240FC355003F7D93 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE91D676240FC355003F7D93 /* AppDelegate.swift */; };
 		DE91D679240FC355003F7D93 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE91D678240FC355003F7D93 /* ViewController.swift */; };
@@ -17,6 +18,7 @@
 
 /* Begin PBXFileReference section */
 		0BA4BCF42428A8E000D06805 /* RootWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootWindowController.swift; sourceTree = "<group>"; };
+		0BA4BCF82429039900D06805 /* LayersManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayersManager.swift; sourceTree = "<group>"; };
 		0BB6B98A2424C4BD0037587F /* CustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomView.swift; sourceTree = "<group>"; };
 		DE91D673240FC355003F7D93 /* CoreDataTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoreDataTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE91D676240FC355003F7D93 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -62,6 +64,7 @@
 				DE91D67D240FC357003F7D93 /* Assets.xcassets */,
 				DE91D67F240FC357003F7D93 /* Main.storyboard */,
 				DE91D682240FC357003F7D93 /* Info.plist */,
+				0BA4BCF82429039900D06805 /* LayersManager.swift */,
 				0BB6B98A2424C4BD0037587F /* CustomView.swift */,
 			);
 			path = CoreDataTest;
@@ -140,6 +143,7 @@
 				0BB6B98B2424C4BD0037587F /* CustomView.swift in Sources */,
 				0BA4BCF52428A8E000D06805 /* RootWindowController.swift in Sources */,
 				DE91D679240FC355003F7D93 /* ViewController.swift in Sources */,
+				0BA4BCF92429039900D06805 /* LayersManager.swift in Sources */,
 				DE91D677240FC355003F7D93 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

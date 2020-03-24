@@ -30,7 +30,7 @@ class CustomView: NSView {
         self.layer?.addSublayer(shapeLayer)
     }
     
-    func removeLatLayer() {
+    func removeLastLayer() {
         self.layer?.sublayers?.removeLast()
     }
     
