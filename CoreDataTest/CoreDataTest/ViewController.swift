@@ -43,6 +43,10 @@ class ViewController: NSViewController {
         }
     }
     
+    override func mouseUp(with event: NSEvent) {
+        layersTableView.reloadData()
+    }
+    
     @IBAction func saveToDesktop(_ sender: Any) {
         layersView.saveSelf()
     }
@@ -93,6 +97,7 @@ extension ViewController: NSTableViewDelegate {
         } else {
             (cell?.subviews[1] as? NSButton)?.state = .on
         }
+        (cell?.subviews[2] as? NSImageView)?.image = arrayOfLayers[row].previewImage
         return cell
     }
 }

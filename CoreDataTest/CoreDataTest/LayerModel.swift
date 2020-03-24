@@ -13,6 +13,22 @@ class LayerModel: NSObject {
     @objc dynamic var layerName: String
     var view: CustomView
     var isHideLayer: Bool
+    var previewImage: NSImage {
+        let mutuableCopy = view
+        mutuableCopy.isHidden = false
+        let mySize = mutuableCopy.bounds.size
+        let imgSize = NSMakeSize( mySize.width, mySize.height)
+        
+        let bir = mutuableCopy.bitmapImageRepForCachingDisplay(in: mutuableCopy.bounds)!
+        bir.size = imgSize
+        
+        mutuableCopy.cacheDisplay(in: mutuableCopy.bounds, to: bir)
+        
+        let image = NSImage(size: imgSize)
+        image.addRepresentation(bir)
+        mutuableCopy.isHidden = self.isHideLayer
+        return image
+    }
     
     init(frame: NSRect) {
         self.layerName = "New Layer"
