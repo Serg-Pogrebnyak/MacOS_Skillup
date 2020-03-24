@@ -43,6 +43,9 @@ class ViewController: NSViewController {
         }
     }
     
+    @IBAction func saveToDesktop(_ sender: Any) {
+        layersView.saveSelf()
+    }
     @IBAction func checkBoxTapped(_ sender: NSButton) {
         let index = layersTableView.row(for: sender)
         
