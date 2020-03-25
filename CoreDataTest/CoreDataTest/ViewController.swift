@@ -10,7 +10,7 @@ import Cocoa
 
 class ViewController: NSViewController {
 
-    @IBOutlet weak fileprivate var colorView: NSView!
+    //@IBOutlet weak fileprivate var colorView: NSView!
     @IBOutlet weak fileprivate var layersTableView: NSTableView!
     @IBOutlet weak fileprivate var layersView: LayersManager!
     @IBOutlet weak fileprivate var switchDrawOrClear: NSSwitch!
@@ -24,7 +24,7 @@ class ViewController: NSViewController {
         super.viewDidLoad()
         colorPicker.action = #selector(selectedColor(_:))
         NSEvent.addLocalMonitorForEvents(matching: NSEvent.EventTypeMask.keyDown, handler: myKeyDownEvent)
-        colorView.wantsLayer = true
+        //colorView.wantsLayer = true
         
         
         NotificationCenter.default.addObserver(self,
@@ -45,20 +45,24 @@ class ViewController: NSViewController {
     override func mouseDown(with event: NSEvent) {
         if switchDrawOrClear.state == .on {
             guard layersTableView.selectedRow >= 0 else {return}
-            arrayOfLayers[layersTableView.selectedRow].view.lastPoint = event.locationInWindow
+            let point = self.view.convert(event.locationInWindow, to: arrayOfLayers[layersTableView.selectedRow].view)
+            arrayOfLayers[layersTableView.selectedRow].view.lastPoint = point
         } else {
             guard layersTableView.selectedRow >= 0 else {return}
-            arrayOfLayers[layersTableView.selectedRow].view.clear(atPoint: event.locationInWindow)
+            let point = self.view.convert(event.locationInWindow, to: arrayOfLayers[layersTableView.selectedRow].view)
+            arrayOfLayers[layersTableView.selectedRow].view.clear(atPoint: point)
         }
     }
     
     override func mouseDragged(with event: NSEvent) {
         if switchDrawOrClear.state == .on {
             guard layersTableView.selectedRow >= 0 else {return}
-            arrayOfLayers[layersTableView.selectedRow].view.addPoint(point: event.locationInWindow)
+            let point = self.view.convert(event.locationInWindow, to: arrayOfLayers[layersTableView.selectedRow].view)
+            arrayOfLayers[layersTableView.selectedRow].view.addPoint(point: point)
         } else {
             guard layersTableView.selectedRow >= 0 else {return}
-            arrayOfLayers[layersTableView.selectedRow].view.clear(atPoint: event.locationInWindow)
+            let point = self.view.convert(event.locationInWindow, to: arrayOfLayers[layersTableView.selectedRow].view)
+            arrayOfLayers[layersTableView.selectedRow].view.clear(atPoint: point)
         }
     }
     
@@ -123,7 +127,7 @@ extension ViewController: NSTableViewDelegate {
     func tableView(_ tableView: NSTableView, shouldSelectRow row: Int) -> Bool {
         if row >= 0 {
             selectedRowLayer = row
-            colorView.layer?.backgroundColor = arrayOfLayers[selectedRowLayer].view.brashColor.cgColor
+            //colorView.layer?.backgroundColor = arrayOfLayers[selectedRowLayer].view.brashColor.cgColor
             sliderBrashSize.intValue = Int32(arrayOfLayers[selectedRowLayer].view.brashSize)
             colorPicker.color = arrayOfLayers[selectedRowLayer].view.brashColor
         }
@@ -154,7 +158,7 @@ extension ViewController: NSTouchBarDelegate {
         if let colorPicker = sender as? NSColorPickerTouchBarItem {
             guard layersTableView.selectedRow >= 0 else {return}
             arrayOfLayers[layersTableView.selectedRow].view.brashColor = colorPicker.color
-            colorView.layer?.backgroundColor = arrayOfLayers[selectedRowLayer].view.brashColor.cgColor
+            //colorView.layer?.backgroundColor = arrayOfLayers[selectedRowLayer].view.brashColor.cgColor
         } else {
             fatalError("wrong sender")
         }

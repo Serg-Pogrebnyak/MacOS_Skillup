@@ -32,7 +32,8 @@ class LayerModel: NSObject {
     
     init(frame: NSRect) {
         self.layerName = "New Layer"
-        self.view = CustomView(frame: frame)
+        
+        self.view = CustomView(frame: NSRect.init(x: 0.0, y: 0.0, width: frame.width, height: frame.height))
         self.isHideLayer = false
     }
     
