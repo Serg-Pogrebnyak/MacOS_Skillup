@@ -705,14 +705,14 @@
         <scene sceneID="hIz-AP-VOD">
             <objects>
                 <viewController title="FirstScreen" id="XfG-lQ-9wD" customClass="ViewController" customModule="CoreDataTest" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" misplaced="YES" id="m2S-Jp-Qdl">
+                    <view key="view" id="m2S-Jp-Qdl">
                         <rect key="frame" x="0.0" y="0.0" width="826" height="450"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="PK4-rM-lZA" customClass="LayersManager" customModule="CoreDataTest" customModuleProvider="target">
-                                <rect key="frame" x="230" y="0.0" width="446" height="476"/>
+                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="PK4-rM-lZA" customClass="RootView" customModule="CoreDataTest" customModuleProvider="target">
+                                <rect key="frame" x="230" y="0.0" width="446" height="450"/>
                             </customView>
-                            <slider verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="044-QH-K82">
+                            <slider verticalHuggingPriority="750" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="044-QH-K82">
                                 <rect key="frame" x="18" y="398" width="204" height="19"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="Qpm-97-qV6"/>
@@ -722,17 +722,17 @@
                                     <action selector="sliderChangeValue:" target="XfG-lQ-9wD" id="zxS-we-Iap"/>
                                 </connections>
                             </slider>
-                            <switch horizontalHuggingPriority="750" verticalHuggingPriority="750" baseWritingDirection="leftToRight" alignment="left" state="on" translatesAutoresizingMaskIntoConstraints="NO" id="XtD-j8-Lqw">
+                            <switch horizontalHuggingPriority="750" verticalHuggingPriority="750" ambiguous="YES" baseWritingDirection="leftToRight" alignment="left" state="on" translatesAutoresizingMaskIntoConstraints="NO" id="XtD-j8-Lqw">
                                 <rect key="frame" x="99" y="357" width="42" height="24"/>
                             </switch>
                             <scrollView autohidesScrollers="YES" horizontalLineScroll="42" horizontalPageScroll="10" verticalLineScroll="42" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EPW-iP-kMs">
-                                <rect key="frame" x="676" y="0.0" width="150" height="476"/>
+                                <rect key="frame" x="676" y="0.0" width="150" height="450"/>
                                 <clipView key="contentView" id="41M-sp-gMh">
-                                    <rect key="frame" x="1" y="0.0" width="148" height="475"/>
+                                    <rect key="frame" x="1" y="0.0" width="148" height="449"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnSelection="YES" multipleSelection="NO" autosaveColumns="NO" rowHeight="40" headerView="enu-FY-HyT" viewBased="YES" id="aim-eC-b9Q">
-                                            <rect key="frame" x="0.0" y="0.0" width="148" height="450"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="148" height="424"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <size key="intercellSpacing" width="3" height="2"/>
                                             <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -825,7 +825,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableHeaderView>
                             </scrollView>
-                            <colorWell translatesAutoresizingMaskIntoConstraints="NO" id="VsU-pZ-EUA">
+                            <colorWell ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VsU-pZ-EUA">
                                 <rect key="frame" x="140" y="306" width="80" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="M4U-dO-tmY"/>
@@ -833,10 +833,10 @@
                                 </constraints>
                                 <color key="color" red="0.05813049898" green="0.055541899059999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
-                                    <action selector="setNewBrashLocor:" target="XfG-lQ-9wD" id="WIR-bG-RFw"/>
+                                    <action selector="setNewBrashColor:" target="XfG-lQ-9wD" id="POz-xk-NGK"/>
                                 </connections>
                             </colorWell>
-                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="TlQ-qo-nbo">
+                            <button verticalHuggingPriority="750" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TlQ-qo-nbo">
                                 <rect key="frame" x="57" y="248" width="126" height="32"/>
                                 <buttonCell key="cell" type="push" title="Add new layer" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Oca-Mp-tKj">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -846,7 +846,7 @@
                                     <action selector="addNewLayer:" target="XfG-lQ-9wD" id="7OZ-2z-DG1"/>
                                 </connections>
                             </button>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Acy-as-nii">
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Acy-as-nii">
                                 <rect key="frame" x="137" y="361" width="85" height="16"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" alignment="center" title="Draw" id="ROE-Du-DjJ">
                                     <font key="font" metaFont="system"/>
@@ -854,7 +854,7 @@
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="LDN-WC-sce">
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LDN-WC-sce">
                                 <rect key="frame" x="18" y="361" width="85" height="16"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" alignment="center" title="Clean" id="DpP-2W-fWa">
                                     <font key="font" metaFont="system"/>
@@ -862,7 +862,7 @@
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="TgX-HL-XHS">
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TgX-HL-XHS">
                                 <rect key="frame" x="85" y="430" width="70" height="16"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" title="brash size:" id="oLV-Fb-gqU">
                                     <font key="font" metaFont="system"/>
@@ -870,7 +870,7 @@
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="4Hr-28-6yH">
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4Hr-28-6yH">
                                 <rect key="frame" x="18" y="313" width="73" height="16"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" title="brash color" id="lLW-fq-rc3">
                                     <font key="font" metaFont="system"/>
@@ -878,7 +878,7 @@
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="xix-tg-rLP">
+                            <button verticalHuggingPriority="750" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xix-tg-rLP">
                                 <rect key="frame" x="85" y="207" width="70" height="32"/>
                                 <buttonCell key="cell" type="push" title="Save" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="vkZ-8T-Oc1">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -923,7 +923,7 @@
                     <connections>
                         <outlet property="colorView" destination="VsU-pZ-EUA" id="T6J-yY-Xgh"/>
                         <outlet property="layersTableView" destination="aim-eC-b9Q" id="loK-vQ-Jzg"/>
-                        <outlet property="layersView" destination="PK4-rM-lZA" id="tSk-Mf-XvT"/>
+                        <outlet property="rootView" destination="PK4-rM-lZA" id="QEQ-Iz-5mS"/>
                         <outlet property="sliderBrashSize" destination="044-QH-K82" id="c7J-we-4g5"/>
                         <outlet property="switchDrawOrClear" destination="XtD-j8-Lqw" id="zQA-sS-pCs"/>
                     </connections>

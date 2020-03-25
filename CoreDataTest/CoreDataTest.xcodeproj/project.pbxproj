@@ -7,9 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0B4E8F2E242BB376004ABEA7 /* CALayerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B4E8F2D242BB376004ABEA7 /* CALayerExtension.swift */; };
+		0B4E8F30242BB605004ABEA7 /* NSImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B4E8F2F242BB605004ABEA7 /* NSImageExtension.swift */; };
 		0B661AB3242A3A8200562D52 /* LayerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B661AB2242A3A8200562D52 /* LayerModel.swift */; };
 		0BA4BCF52428A8E000D06805 /* RootWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BA4BCF42428A8E000D06805 /* RootWindowController.swift */; };
-		0BA4BCF92429039900D06805 /* LayersManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BA4BCF82429039900D06805 /* LayersManager.swift */; };
+		0BA4BCF92429039900D06805 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BA4BCF82429039900D06805 /* RootView.swift */; };
 		0BB6B98B2424C4BD0037587F /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BB6B98A2424C4BD0037587F /* CustomView.swift */; };
 		DE91D677240FC355003F7D93 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE91D676240FC355003F7D93 /* AppDelegate.swift */; };
 		DE91D679240FC355003F7D93 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE91D678240FC355003F7D93 /* ViewController.swift */; };
@@ -18,9 +20,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0B4E8F2D242BB376004ABEA7 /* CALayerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CALayerExtension.swift; sourceTree = "<group>"; };
+		0B4E8F2F242BB605004ABEA7 /* NSImageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSImageExtension.swift; sourceTree = "<group>"; };
 		0B661AB2242A3A8200562D52 /* LayerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayerModel.swift; sourceTree = "<group>"; };
 		0BA4BCF42428A8E000D06805 /* RootWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootWindowController.swift; sourceTree = "<group>"; };
-		0BA4BCF82429039900D06805 /* LayersManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayersManager.swift; sourceTree = "<group>"; };
+		0BA4BCF82429039900D06805 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		0BB6B98A2424C4BD0037587F /* CustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomView.swift; sourceTree = "<group>"; };
 		DE91D673240FC355003F7D93 /* CoreDataTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoreDataTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE91D676240FC355003F7D93 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -66,9 +70,11 @@
 				DE91D67D240FC357003F7D93 /* Assets.xcassets */,
 				DE91D67F240FC357003F7D93 /* Main.storyboard */,
 				DE91D682240FC357003F7D93 /* Info.plist */,
-				0BA4BCF82429039900D06805 /* LayersManager.swift */,
-				0BB6B98A2424C4BD0037587F /* CustomView.swift */,
+				0BA4BCF82429039900D06805 /* RootView.swift */,
 				0B661AB2242A3A8200562D52 /* LayerModel.swift */,
+				0BB6B98A2424C4BD0037587F /* CustomView.swift */,
+				0B4E8F2D242BB376004ABEA7 /* CALayerExtension.swift */,
+				0B4E8F2F242BB605004ABEA7 /* NSImageExtension.swift */,
 			);
 			path = CoreDataTest;
 			sourceTree = "<group>";
@@ -145,9 +151,11 @@
 			files = (
 				0BB6B98B2424C4BD0037587F /* CustomView.swift in Sources */,
 				0BA4BCF52428A8E000D06805 /* RootWindowController.swift in Sources */,
+				0B4E8F30242BB605004ABEA7 /* NSImageExtension.swift in Sources */,
 				DE91D679240FC355003F7D93 /* ViewController.swift in Sources */,
-				0BA4BCF92429039900D06805 /* LayersManager.swift in Sources */,
+				0BA4BCF92429039900D06805 /* RootView.swift in Sources */,
 				DE91D677240FC355003F7D93 /* AppDelegate.swift in Sources */,
+				0B4E8F2E242BB376004ABEA7 /* CALayerExtension.swift in Sources */,
 				0B661AB3242A3A8200562D52 /* LayerModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

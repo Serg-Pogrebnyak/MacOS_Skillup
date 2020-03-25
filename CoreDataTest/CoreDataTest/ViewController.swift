@@ -12,16 +12,18 @@ class ViewController: NSViewController {
 
     @IBOutlet weak fileprivate var colorView: NSColorWell!
     @IBOutlet weak fileprivate var layersTableView: NSTableView!
-    @IBOutlet weak fileprivate var layersView: LayersManager!
+    @IBOutlet weak fileprivate var rootView: RootView!
     @IBOutlet weak fileprivate var switchDrawOrClear: NSSwitch!
     @IBOutlet weak fileprivate var sliderBrashSize: NSSlider!
-    @objc dynamic var arrayOfLayers = [LayerModel]()
-    let colorPicker = NSColorPickerTouchBarItem(identifier: .colorLabelItem)
-    var selectedRowLayer = 0
+    
+    @objc dynamic fileprivate var arrayOfLayers = [LayerModel]()
+    fileprivate let colorPicker = NSColorPickerTouchBarItem(identifier: .colorLabelItem)
+    fileprivate var selectedRowLayer = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
         colorPicker.action = #selector(selectedColor(_:))
+        //observer for keyboard
         NSEvent.addLocalMonitorForEvents(matching: NSEvent.EventTypeMask.keyDown, handler: myKeyDownEvent)
         
         NotificationCenter.default.addObserver(self,
@@ -31,14 +33,44 @@ class ViewController: NSViewController {
         //addNewLayer(self)//- bug
     }
     
-    @objc func tableViewChengeSelectRow() {
-        if layersTableView.selectedRow >= 0 && selectedRowLayer != layersTableView.selectedRow {
-            selectedRowLayer = layersTableView.selectedRow
+    //MARK: - IBActions
+    @IBAction func setNewBrashColor(_ sender: NSColorWell) {
+        colorPicker.color = sender.color
+        if selectedRowLayer < arrayOfLayers.count {
+            arrayOfLayers[selectedRowLayer].view.brashColor = sender.color
         }
-        layersTableView.selectRowIndexes(IndexSet.init(integer: selectedRowLayer),
-                                         byExtendingSelection: false)
     }
     
+    @IBAction func saveToDesktop(_ sender: Any) {
+        rootView.saveSelf()
+    }
+    
+    @IBAction func checkBoxTapped(_ sender: NSButton) {
+        let index = layersTableView.row(for: sender)
+        
+        if sender.state == .off {
+            arrayOfLayers[index].isHideLayer = true
+            arrayOfLayers[index].view.isHidden = true
+        } else {
+            arrayOfLayers[index].isHideLayer = false
+            arrayOfLayers[index].view.isHidden = false
+        }
+    }
+    
+    @IBAction func addNewLayer(_ sender: Any) {
+        let layerModel = LayerModel(frame: rootView.frame)
+        rootView.addSubview(layerModel.view)
+        arrayOfLayers.append(layerModel)
+        layerModel.view.widthAnchor.constraint(equalTo: rootView.widthAnchor).isActive = true
+        layerModel.view.heightAnchor.constraint(equalTo: rootView.heightAnchor).isActive = true
+    }
+    
+    @IBAction func sliderChangeValue(_ sender: NSSlider) {
+        guard layersTableView.selectedRow >= 0 else {return}
+        arrayOfLayers[layersTableView.selectedRow].view.brashSize = CGFloat(sender.intValue)
+    }
+    
+    //MARK: - ovveride mouse function
     override func mouseDown(with event: NSEvent) {
         if switchDrawOrClear.state == .on {
             guard layersTableView.selectedRow >= 0 else {return}
@@ -67,43 +99,8 @@ class ViewController: NSViewController {
         layersTableView.reloadData()
     }
     
-    @IBAction func setNewBrashLocor(_ sender: NSColorWell) {
-        colorPicker.color = sender.color
-        if selectedRowLayer < arrayOfLayers.count {
-            arrayOfLayers[selectedRowLayer].view.brashColor = sender.color
-        }
-    }
-    
-    @IBAction func saveToDesktop(_ sender: Any) {
-        layersView.saveSelf()
-    }
-    
-    @IBAction func checkBoxTapped(_ sender: NSButton) {
-        let index = layersTableView.row(for: sender)
-        
-        if sender.state == .off {
-            arrayOfLayers[index].isHideLayer = true
-            arrayOfLayers[index].view.isHidden = true
-        } else {
-            arrayOfLayers[index].isHideLayer = false
-            arrayOfLayers[index].view.isHidden = false
-        }
-    }
-    
-    @IBAction func addNewLayer(_ sender: Any) {
-        let layerModel = LayerModel(frame: layersView.frame)
-        layersView.addSubview(layerModel.view)
-        arrayOfLayers.append(layerModel)
-        layerModel.view.widthAnchor.constraint(equalTo: layersView.widthAnchor).isActive = true
-        layerModel.view.heightAnchor.constraint(equalTo: layersView.heightAnchor).isActive = true
-    }
-    
-    @IBAction func sliderChangeValue(_ sender: NSSlider) {
-        guard layersTableView.selectedRow >= 0 else {return}
-        arrayOfLayers[layersTableView.selectedRow].view.brashSize = CGFloat(sender.intValue)
-    }
-    
-    func myKeyDownEvent(event: NSEvent) -> NSEvent?
+    //MARK: - keyboard shortcut
+    fileprivate func myKeyDownEvent(event: NSEvent) -> NSEvent?
     {
         let modifierFlags = event.modifierFlags
         if modifierFlags.contains(NSEvent.ModifierFlags.command) && event.keyCode == 6 && layersTableView.selectedRow >= 0 {
@@ -113,6 +110,14 @@ class ViewController: NSViewController {
         return event
     }
     
+    //MARK: - keyboard shortcut
+    @objc fileprivate func tableViewChengeSelectRow() {
+        if layersTableView.selectedRow >= 0 && selectedRowLayer != layersTableView.selectedRow {
+            selectedRowLayer = layersTableView.selectedRow
+        }
+        layersTableView.selectRowIndexes(IndexSet.init(integer: selectedRowLayer),
+                                         byExtendingSelection: false)
+    }
 }
 
 extension ViewController: NSTableViewDelegate {

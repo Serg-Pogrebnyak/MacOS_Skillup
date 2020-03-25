@@ -14,7 +14,7 @@ class LayerModel: NSObject {
     var view: CustomView
     var isHideLayer: Bool
     var previewImage: NSImage {
-        let mutuableCopy = view
+        let mutuableCopy = view//-bug can't create copy of NSView
         mutuableCopy.isHidden = false
         let mySize = mutuableCopy.bounds.size
         let imgSize = NSMakeSize( mySize.width, mySize.height)
