@@ -12,7 +12,7 @@ class CustomView: NSView {
     
     var lastPoint = NSPoint(x: 0, y: 0)
     var brashSize: CGFloat = 5
-    var brashColor = NSColor.red.cgColor
+    var brashColor = NSColor.red
     
     func addPoint(point: CGPoint) {
         let shapeLayer = CAShapeLayer()
@@ -25,7 +25,7 @@ class CustomView: NSView {
         shapeLayer.path = path
         shapeLayer.lineWidth = brashSize
         shapeLayer.lineCap = .round
-        shapeLayer.strokeColor = brashColor
+        shapeLayer.strokeColor = brashColor.cgColor
         
         self.layer?.addSublayer(shapeLayer)
     }

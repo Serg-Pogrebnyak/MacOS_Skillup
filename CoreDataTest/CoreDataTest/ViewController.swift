@@ -10,17 +10,36 @@ import Cocoa
 
 class ViewController: NSViewController {
 
+    @IBOutlet weak fileprivate var colorView: NSView!
     @IBOutlet weak fileprivate var layersTableView: NSTableView!
     @IBOutlet weak fileprivate var layersView: LayersManager!
     @IBOutlet weak fileprivate var switchDrawOrClear: NSSwitch!
     //@IBOutlet weak fileprivate var customView: CustomView!
     @IBOutlet weak fileprivate var sliderBrashSize: NSSlider!
     @objc dynamic var arrayOfLayers = [LayerModel]()
+    let colorPicker = NSColorPickerTouchBarItem(identifier: .colorLabelItem)
+    var selectedRowLayer = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //sliderBrashSize.intValue = Int32(customView.brashSize)
+        colorPicker.action = #selector(selectedColor(_:))
         NSEvent.addLocalMonitorForEvents(matching: NSEvent.EventTypeMask.keyDown, handler: myKeyDownEvent)
+        colorView.wantsLayer = true
+        
+        
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(tableViewChengeSelectRow),
+                                               name: NSTableView.didUpdateTrackingAreasNotification,
+                                               object: nil)
+        //addNewLayer(self)//- bug
+    }
+    
+    @objc func tableViewChengeSelectRow() {
+        if layersTableView.selectedRow >= 0 && selectedRowLayer != layersTableView.selectedRow {
+            selectedRowLayer = layersTableView.selectedRow
+        }
+        layersTableView.selectRowIndexes(IndexSet.init(integer: selectedRowLayer),
+                                         byExtendingSelection: false)
     }
     
     override func mouseDown(with event: NSEvent) {
@@ -100,6 +119,16 @@ extension ViewController: NSTableViewDelegate {
         (cell?.subviews[2] as? NSImageView)?.image = arrayOfLayers[row].previewImage
         return cell
     }
+    
+    func tableView(_ tableView: NSTableView, shouldSelectRow row: Int) -> Bool {
+        if row >= 0 {
+            selectedRowLayer = row
+            colorView.layer?.backgroundColor = arrayOfLayers[selectedRowLayer].view.brashColor.cgColor
+            sliderBrashSize.intValue = Int32(arrayOfLayers[selectedRowLayer].view.brashSize)
+            colorPicker.color = arrayOfLayers[selectedRowLayer].view.brashColor
+        }
+        return true
+    }
 }
 
 extension ViewController: NSTouchBarDelegate {
@@ -115,8 +144,6 @@ extension ViewController: NSTouchBarDelegate {
     func touchBar(_ touchBar: NSTouchBar, makeItemForIdentifier identifier: NSTouchBarItem.Identifier) -> NSTouchBarItem? {
         switch identifier {
         case .colorLabelItem:
-          let colorPicker = NSColorPickerTouchBarItem(identifier: identifier)
-          colorPicker.action = #selector(selectedColor(_:))
           return colorPicker
         default:
           return nil
@@ -126,7 +153,8 @@ extension ViewController: NSTouchBarDelegate {
     @objc fileprivate func selectedColor(_ sender: Any) {
         if let colorPicker = sender as? NSColorPickerTouchBarItem {
             guard layersTableView.selectedRow >= 0 else {return}
-            arrayOfLayers[layersTableView.selectedRow].view.brashColor = colorPicker.color.cgColor
+            arrayOfLayers[layersTableView.selectedRow].view.brashColor = colorPicker.color
+            colorView.layer?.backgroundColor = arrayOfLayers[selectedRowLayer].view.brashColor.cgColor
         } else {
             fatalError("wrong sender")
         }
