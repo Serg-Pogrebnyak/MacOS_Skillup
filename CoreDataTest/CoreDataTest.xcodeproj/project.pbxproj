@@ -45,6 +45,87 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0B4E8F31242BB93C004ABEA7 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				0B4E8F36242BB992004ABEA7 /* Application */,
+				0B4E8F37242BB99C004ABEA7 /* Controllers */,
+				0B4E8F38242BB9A3004ABEA7 /* Models */,
+				0B4E8F39242BB9A8004ABEA7 /* Extensions */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		0B4E8F32242BB93F004ABEA7 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				DE91D67D240FC357003F7D93 /* Assets.xcassets */,
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
+		0B4E8F33242BB942004ABEA7 /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				DE91D67F240FC357003F7D93 /* Main.storyboard */,
+			);
+			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		0B4E8F34242BB945004ABEA7 /* Plists */ = {
+			isa = PBXGroup;
+			children = (
+				DE91D682240FC357003F7D93 /* Info.plist */,
+			);
+			path = Plists;
+			sourceTree = "<group>";
+		};
+		0B4E8F35242BB983004ABEA7 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				0B4E8F34242BB945004ABEA7 /* Plists */,
+				0B4E8F33242BB942004ABEA7 /* Storyboard */,
+				0B4E8F32242BB93F004ABEA7 /* Images */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		0B4E8F36242BB992004ABEA7 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				DE91D676240FC355003F7D93 /* AppDelegate.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		0B4E8F37242BB99C004ABEA7 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				0BA4BCF42428A8E000D06805 /* RootWindowController.swift */,
+				DE91D678240FC355003F7D93 /* ViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		0B4E8F38242BB9A3004ABEA7 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				0BA4BCF82429039900D06805 /* RootView.swift */,
+				0B661AB2242A3A8200562D52 /* LayerModel.swift */,
+				0BB6B98A2424C4BD0037587F /* CustomView.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		0B4E8F39242BB9A8004ABEA7 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				0B4E8F2D242BB376004ABEA7 /* CALayerExtension.swift */,
+				0B4E8F2F242BB605004ABEA7 /* NSImageExtension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		DE91D66A240FC355003F7D93 = {
 			isa = PBXGroup;
 			children = (
@@ -64,17 +145,8 @@
 		DE91D675240FC355003F7D93 /* CoreDataTest */ = {
 			isa = PBXGroup;
 			children = (
-				DE91D676240FC355003F7D93 /* AppDelegate.swift */,
-				0BA4BCF42428A8E000D06805 /* RootWindowController.swift */,
-				DE91D678240FC355003F7D93 /* ViewController.swift */,
-				DE91D67D240FC357003F7D93 /* Assets.xcassets */,
-				DE91D67F240FC357003F7D93 /* Main.storyboard */,
-				DE91D682240FC357003F7D93 /* Info.plist */,
-				0BA4BCF82429039900D06805 /* RootView.swift */,
-				0B661AB2242A3A8200562D52 /* LayerModel.swift */,
-				0BB6B98A2424C4BD0037587F /* CustomView.swift */,
-				0B4E8F2D242BB376004ABEA7 /* CALayerExtension.swift */,
-				0B4E8F2F242BB605004ABEA7 /* NSImageExtension.swift */,
+				0B4E8F31242BB93C004ABEA7 /* Sources */,
+				0B4E8F35242BB983004ABEA7 /* Resources */,
 			);
 			path = CoreDataTest;
 			sourceTree = "<group>";
