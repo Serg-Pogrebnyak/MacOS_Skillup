@@ -10,11 +10,10 @@ import Cocoa
 
 class ViewController: NSViewController {
 
-    //@IBOutlet weak fileprivate var colorView: NSView!
+    @IBOutlet weak fileprivate var colorView: NSColorWell!
     @IBOutlet weak fileprivate var layersTableView: NSTableView!
     @IBOutlet weak fileprivate var layersView: LayersManager!
     @IBOutlet weak fileprivate var switchDrawOrClear: NSSwitch!
-    //@IBOutlet weak fileprivate var customView: CustomView!
     @IBOutlet weak fileprivate var sliderBrashSize: NSSlider!
     @objc dynamic var arrayOfLayers = [LayerModel]()
     let colorPicker = NSColorPickerTouchBarItem(identifier: .colorLabelItem)
@@ -24,8 +23,6 @@ class ViewController: NSViewController {
         super.viewDidLoad()
         colorPicker.action = #selector(selectedColor(_:))
         NSEvent.addLocalMonitorForEvents(matching: NSEvent.EventTypeMask.keyDown, handler: myKeyDownEvent)
-        //colorView.wantsLayer = true
-        
         
         NotificationCenter.default.addObserver(self,
                                                selector: #selector(tableViewChengeSelectRow),
@@ -68,6 +65,13 @@ class ViewController: NSViewController {
     
     override func mouseUp(with event: NSEvent) {
         layersTableView.reloadData()
+    }
+    
+    @IBAction func setNewBrashLocor(_ sender: NSColorWell) {
+        colorPicker.color = sender.color
+        if selectedRowLayer < arrayOfLayers.count {
+            arrayOfLayers[selectedRowLayer].view.brashColor = sender.color
+        }
     }
     
     @IBAction func saveToDesktop(_ sender: Any) {
@@ -127,7 +131,7 @@ extension ViewController: NSTableViewDelegate {
     func tableView(_ tableView: NSTableView, shouldSelectRow row: Int) -> Bool {
         if row >= 0 {
             selectedRowLayer = row
-            //colorView.layer?.backgroundColor = arrayOfLayers[selectedRowLayer].view.brashColor.cgColor
+            colorView.color = arrayOfLayers[selectedRowLayer].view.brashColor
             sliderBrashSize.intValue = Int32(arrayOfLayers[selectedRowLayer].view.brashSize)
             colorPicker.color = arrayOfLayers[selectedRowLayer].view.brashColor
         }
@@ -158,7 +162,7 @@ extension ViewController: NSTouchBarDelegate {
         if let colorPicker = sender as? NSColorPickerTouchBarItem {
             guard layersTableView.selectedRow >= 0 else {return}
             arrayOfLayers[layersTableView.selectedRow].view.brashColor = colorPicker.color
-            //colorView.layer?.backgroundColor = arrayOfLayers[selectedRowLayer].view.brashColor.cgColor
+            colorView.color = arrayOfLayers[selectedRowLayer].view.brashColor
         } else {
             fatalError("wrong sender")
         }

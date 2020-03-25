@@ -832,6 +832,9 @@
                                     <constraint firstAttribute="width" constant="80" id="m9s-ke-8pR"/>
                                 </constraints>
                                 <color key="color" red="0.05813049898" green="0.055541899059999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <action selector="setNewBrashLocor:" target="XfG-lQ-9wD" id="WIR-bG-RFw"/>
+                                </connections>
                             </colorWell>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="TlQ-qo-nbo">
                                 <rect key="frame" x="57" y="248" width="126" height="32"/>
@@ -918,6 +921,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="colorView" destination="VsU-pZ-EUA" id="T6J-yY-Xgh"/>
                         <outlet property="layersTableView" destination="aim-eC-b9Q" id="loK-vQ-Jzg"/>
                         <outlet property="layersView" destination="PK4-rM-lZA" id="tSk-Mf-XvT"/>
                         <outlet property="sliderBrashSize" destination="044-QH-K82" id="c7J-we-4g5"/>
