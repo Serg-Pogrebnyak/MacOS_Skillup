@@ -368,7 +368,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = YQ63ZZYZV7;
 				ENABLE_HARDENED_RUNTIME = YES;
-				INFOPLIST_FILE = CoreDataTest/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/CoreDataTest/Resources/Plists/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
@@ -389,7 +389,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = YQ63ZZYZV7;
 				ENABLE_HARDENED_RUNTIME = YES;
-				INFOPLIST_FILE = CoreDataTest/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/CoreDataTest/Resources/Plists/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",

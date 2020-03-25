@@ -30,7 +30,7 @@ class ViewController: NSViewController {
                                                selector: #selector(tableViewChengeSelectRow),
                                                name: NSTableView.didUpdateTrackingAreasNotification,
                                                object: nil)
-        //addNewLayer(self)//- bug
+        setupUI()
     }
     
     //MARK: - IBActions
@@ -117,6 +117,14 @@ class ViewController: NSViewController {
         }
         layersTableView.selectRowIndexes(IndexSet.init(integer: selectedRowLayer),
                                          byExtendingSelection: false)
+    }
+    
+    //other function
+    fileprivate func setupUI() {
+        addNewLayer(self)//- bug user can't resize window
+        colorView.color = arrayOfLayers[selectedRowLayer].view.brashColor
+        sliderBrashSize.intValue = Int32(arrayOfLayers[selectedRowLayer].view.brashSize)
+        colorPicker.color = arrayOfLayers[selectedRowLayer].view.brashColor
     }
 }
 
