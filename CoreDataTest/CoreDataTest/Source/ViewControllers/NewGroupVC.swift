@@ -1,5 +1,5 @@
 //
-//  CreateNewGroupViewController.swift
+//  NewGroupVC.swift
 //  CoreDataTest
 //
 //  Created by Sergey Pohrebnuak on 18.03.2020.
@@ -8,7 +8,7 @@
 
 import Cocoa
 
-class CreateNewGroupViewController: NSViewController {
+class NewGroupVC: NSViewController {
 
     var callback: ((Group) -> Void)?
 

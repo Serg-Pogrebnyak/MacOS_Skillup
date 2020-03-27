@@ -1,5 +1,5 @@
 //
-//  CreateNewPersonViewController.swift
+//  NewPersonVC.swift
 //  CoreDataTest
 //
 //  Created by Sergey Pohrebnuak on 18.03.2020.
@@ -8,7 +8,7 @@
 
 import Cocoa
 
-class CreateNewPersonViewController: NSViewController {
+class NewPersonVC: NSViewController {
 
     var callback: ((Employee) -> Void)?
 

@@ -1,5 +1,5 @@
 //
-//  CreateNewTeamFromCompanyViewController.swift
+//  NewTeamFromCompanyVC.swift
 //  CoreDataTest
 //
 //  Created by Sergey Pohrebnuak on 18.03.2020.
@@ -8,7 +8,7 @@
 
 import Cocoa
 
-class CreateNewTeamFromCompanyViewController: NSViewController {
+class NewTeamFromCompanyVC: NSViewController {
 
     var callback: ((Team) -> Void)?
     

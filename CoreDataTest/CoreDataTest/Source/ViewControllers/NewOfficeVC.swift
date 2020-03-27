@@ -1,5 +1,5 @@
 //
-//  CreateNewOfficeViewController.swift
+//  NewOfficeVC.swift
 //  CoreDataTest
 //
 //  Created by Sergey Pogrebnyak on 13.03.2020.
@@ -8,7 +8,7 @@
 
 import Cocoa
 
-class CreateNewOfficeViewController: NSViewController {
+class NewOfficeVC: NSViewController {
 
     var callback: ((Office) -> Void)?
 
