@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		0B49A6C92422484200823960 /* CreateNewTeamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B49A6C82422484200823960 /* CreateNewTeamViewController.swift */; };
+		0B4E8F3C242D1E5C004ABEA7 /* googleplaystore.csv in Resources */ = {isa = PBXBuildFile; fileRef = 0B4E8F3B242D1E5C004ABEA7 /* googleplaystore.csv */; };
+		0B4E8F3E242D1ED3004ABEA7 /* ServerEmulator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B4E8F3D242D1ED3004ABEA7 /* ServerEmulator.swift */; };
 		0B8AF2B024225C6000927500 /* CreateNewRoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B8AF2AE24225C6000927500 /* CreateNewRoomViewController.swift */; };
 		0B8AF2B32422662300927500 /* CreateNewGroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B8AF2B22422662300927500 /* CreateNewGroupViewController.swift */; };
 		0B8AF2B52422739900927500 /* CreateNewPersonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B8AF2B42422739900927500 /* CreateNewPersonViewController.swift */; };
@@ -35,6 +37,8 @@
 
 /* Begin PBXFileReference section */
 		0B49A6C82422484200823960 /* CreateNewTeamViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNewTeamViewController.swift; sourceTree = "<group>"; };
+		0B4E8F3B242D1E5C004ABEA7 /* googleplaystore.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = googleplaystore.csv; sourceTree = "<group>"; };
+		0B4E8F3D242D1ED3004ABEA7 /* ServerEmulator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerEmulator.swift; sourceTree = "<group>"; };
 		0B8AF2AE24225C6000927500 /* CreateNewRoomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNewRoomViewController.swift; sourceTree = "<group>"; };
 		0B8AF2B22422662300927500 /* CreateNewGroupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNewGroupViewController.swift; sourceTree = "<group>"; };
 		0B8AF2B42422739900927500 /* CreateNewPersonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNewPersonViewController.swift; sourceTree = "<group>"; };
@@ -84,6 +88,7 @@
 				DE91D69D24113B9E003F7D93 /* Team.swift */,
 				DE91D69F24113C52003F7D93 /* Group.swift */,
 				DE91D68F240FD9AF003F7D93 /* Employee.swift */,
+				0B4E8F3D242D1ED3004ABEA7 /* ServerEmulator.swift */,
 			);
 			path = "Core Data";
 			sourceTree = "<group>";
@@ -96,6 +101,14 @@
 				DEDDA99B241800AF0027CF2C /* HistoryManager.swift */,
 			);
 			path = Managers;
+			sourceTree = "<group>";
+		};
+		0B4E8F3A242D1E3A004ABEA7 /* Mocked data */ = {
+			isa = PBXGroup;
+			children = (
+				0B4E8F3B242D1E5C004ABEA7 /* googleplaystore.csv */,
+			);
+			path = "Mocked data";
 			sourceTree = "<group>";
 		};
 		DE91D66A240FC355003F7D93 = {
@@ -125,6 +138,7 @@
 				DEB591B02418FDE10087D51E /* Nibs */,
 				DE91D68D240FD873003F7D93 /* Resources */,
 				DE91D68E240FD895003F7D93 /* Plist */,
+				0B4E8F3A242D1E3A004ABEA7 /* Mocked data */,
 			);
 			path = CoreDataTest;
 			sourceTree = "<group>";
@@ -254,6 +268,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DE91D67E240FC357003F7D93 /* Assets.xcassets in Resources */,
+				0B4E8F3C242D1E5C004ABEA7 /* googleplaystore.csv in Resources */,
 				DEB591B8241A9F3E0087D51E /* CustomWindow.storyboard in Resources */,
 				DE91D681240FC357003F7D93 /* Main.storyboard in Resources */,
 			);
@@ -287,6 +302,7 @@
 				DE91D677240FC355003F7D93 /* AppDelegate.swift in Sources */,
 				DE91D692240FD9C7003F7D93 /* CoreManager.swift in Sources */,
 				DE91D698241139B2003F7D93 /* Company.swift in Sources */,
+				0B4E8F3E242D1ED3004ABEA7 /* ServerEmulator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

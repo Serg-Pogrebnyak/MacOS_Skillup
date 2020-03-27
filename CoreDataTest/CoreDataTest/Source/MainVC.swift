@@ -19,7 +19,10 @@ class MainVC: NSViewController {
         super.viewDidLoad()
         HistoryManager.shared.currentObject = PickerElement.company
         arrayOfElements = CoreManager.shared.getAllCompany()
-        
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(dataWasLoadedFromServer),
+                                               name: Notification.Name("DataWasLoadedFromServer"),
+                                               object: nil)
         updateUI()
     }
     
@@ -35,7 +38,8 @@ class MainVC: NSViewController {
     }
 
     @IBAction func saveDataToCoreData(_ sender: Any) {
-        CoreManager.shared.saveContext()
+        ServerEmulator().loadDataFromCSV()
+        //CoreManager.shared.saveContext()
     }
 
     @IBAction func backButtonTapped(_ sender: Any) {
@@ -78,6 +82,17 @@ class MainVC: NSViewController {
             contextMenu.addItem(newMenuItem)
         }
         return contextMenu
+    }
+    
+    @objc func dataWasLoadedFromServer() {
+        CoreManager.shared.coreManagerContext.perform {
+            do {
+                self.arrayOfElements = try CoreManager.shared.coreManagerContext.fetch(Company.fetchRequest()) as! [Company]
+            } catch {
+                let nserror = error as NSError
+                fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
+            }
+        }
     }
     
     @objc func didTapOnButtonCreateNew(_ sender: NSMenuItem) {

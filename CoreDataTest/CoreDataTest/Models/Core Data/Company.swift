@@ -22,9 +22,9 @@ class Company: NSManagedObject {
         case team = "Create new team"
     }
 
-    init(companyName: String) {
-        let entity = NSEntityDescription.entity(forEntityName: "Company", in: CoreManager.shared.coreManagerContext)!
-        super.init(entity: entity, insertInto: CoreManager.shared.coreManagerContext)
+    init(companyName: String, context: NSManagedObjectContext = CoreManager.shared.coreManagerContext) {
+        let entity = NSEntityDescription.entity(forEntityName: "Company", in: context)!
+        super.init(entity: entity, insertInto: context)
         self.name = companyName
         self.idLocal = UUID().uuidString
     }
