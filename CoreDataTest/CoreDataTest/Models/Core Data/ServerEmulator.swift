@@ -11,25 +11,21 @@ import Cocoa
 struct ServerEmulator {
     func loadDataFromCSV() {
         DispatchQueue.global().async {
-            let privateQueue = NSManagedObjectContext(concurrencyType: .privateQueueConcurrencyType)
-            privateQueue.parent = CoreManager.shared.coreManagerContext
+            let mainQueue = CoreManager.shared.coreManagerContext
             let start = CFAbsoluteTimeGetCurrent()
             var data = self.readDataFromCSV(fileName: "googleplaystore", fileType: "csv")
             data = self.cleanRows(file: data!)
             let csvRows = self.csv(data: data!)
             print("✅work")
-            for (index, row) in csvRows.enumerated() {
-                Company(companyName: row[0], context: privateQueue)
-                print(index)
-                usleep(100)
+            mainQueue.performAndWait {
+                for (index, row) in csvRows.enumerated() {
+                    Company(companyName: row[0], context: mainQueue)
+                    print(index)
+                    usleep(200)
+                }
             }
             
             do {
-                //var privateQueueArray = try privateQueue.fetch(Company.fetchRequest()) as! [Company]
-                //var mainQueueArray = try CoreManager.shared.coreManagerContext.fetch(Company.fetchRequest()) as! [Company]
-                //print("private queue \(privateQueueArray.count)")
-                //print("main queue \(mainQueueArray.count)")
-                try? privateQueue.save()
                 NotificationCenter.default.post(name: Notification.Name("DataWasLoadedFromServer"), object: nil)
             } catch {
                 let nserror = error as NSError
