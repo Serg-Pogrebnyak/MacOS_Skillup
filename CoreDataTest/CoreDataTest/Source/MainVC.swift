@@ -37,9 +37,12 @@ class MainVC: NSViewController {
         updateUI()
     }
 
-    @IBAction func saveDataToCoreData(_ sender: Any) {
+    @IBAction func didTapEmulateLoadData(_ sender: Any) {
         ServerEmulator().loadDataFromCSV()
-        //CoreManager.shared.saveContext()
+    }
+    
+    @IBAction func saveDataToCoreData(_ sender: Any) {
+        CoreManager.shared.saveContext()
     }
 
     @IBAction func backButtonTapped(_ sender: Any) {
