@@ -1,5 +1,5 @@
 //
-//  CreateNewTeamViewController.swift
+//  CreateNewGroupViewController.swift
 //  CoreDataTest
 //
 //  Created by Sergey Pohrebnuak on 18.03.2020.
@@ -8,14 +8,14 @@
 
 import Cocoa
 
-class CreateNewTeamViewController: NSViewController {
-    
-    var callback: ((Team) -> Void)?
+class CreateNewGroupViewController: NSViewController {
 
-    @IBOutlet weak var teamName: NSTextField!
+    var callback: ((Group) -> Void)?
+
+    @IBOutlet weak fileprivate var groupName: NSTextField!
 
     @IBAction func didTapCreateButton(_ sender: Any) {
-        callback?(Team(teamName: teamName.stringValue))
+        callback?(Group(groupName: groupName.stringValue))
         self.view.window?.close()
     }
     

@@ -9,8 +9,8 @@
 import Foundation
 import Cocoa
 
-class CreatorManager {
-    static let shared = CreatorManager()
+class CreataNewCorDataObjFactory {
+    static let shared = CreataNewCorDataObjFactory()
 
     func createNewOffice(callback:@escaping (Office) -> Void) {
         let storyboard = NSStoryboard(name: "CustomWindow",bundle: nil)

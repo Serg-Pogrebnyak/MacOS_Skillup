@@ -87,7 +87,7 @@ extension Company: TableViewFirstColumnProtocol {
     }
     
     private func addNewOffice() {
-        CreatorManager.shared.createNewOffice { (office) in
+        CreataNewCorDataObjFactory.shared.createNewOffice { (office) in
             let mutableCopy = self.offices.mutableCopy() as! NSMutableSet
             mutableCopy.add(office)
             self.offices = mutableCopy
@@ -103,7 +103,7 @@ extension Company: TableViewFirstColumnProtocol {
                 allRooms.append(room)
             }
         }
-        CreatorManager.shared.createNewTeamFromCompany(roomArray: allRooms) { (team) in
+        CreataNewCorDataObjFactory.shared.createNewTeamFromCompany(roomArray: allRooms) { (team) in
             let mutableCopy = self.teams.mutableCopy() as! NSMutableSet
             mutableCopy.add(team)
             self.teams = mutableCopy

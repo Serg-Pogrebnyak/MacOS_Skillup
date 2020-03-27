@@ -1,5 +1,5 @@
 //
-//  Room.swift
+//  Group.swift
 //  CoreDataTest
 //
 //  Created by Sergey Pogrebnyak on 05.03.2020.
@@ -8,22 +8,21 @@
 
 import Foundation
 import CoreData
-import Cocoa
 
-class Room: NSManagedObject {
-    @NSManaged public var roomNumber: String
-    @NSManaged public var teams: NSSet
-    @NSManaged public var office: Office
+class Group: NSManagedObject {
+    @NSManaged public var name: String
+    @NSManaged public var team: Team
+    @NSManaged public var persons: NSSet
     @NSManaged public var idLocal: String
-    
-    private enum CreateNew: String {
-        case team = "Create new team"
-    }
 
-    init(roomNumber: String) {
-        let entity = NSEntityDescription.entity(forEntityName: "Room", in: CoreManager.shared.coreManagerContext)!
+    private enum CreateNew: String {
+        case person = "Create new person"
+    }
+    
+    init(groupName: String) {
+        let entity = NSEntityDescription.entity(forEntityName: "Group", in: CoreManager.shared.coreManagerContext)!
         super.init(entity: entity, insertInto: CoreManager.shared.coreManagerContext)
-        self.roomNumber = roomNumber
+        self.name = groupName
         self.idLocal = UUID().uuidString
     }
 
@@ -31,64 +30,59 @@ class Room: NSManagedObject {
         super.init(entity: entity, insertInto: context)
     }
 
-    @nonobjc public func fetchRequest() -> NSFetchRequest<Room> {
-        return NSFetchRequest<Room>(entityName: "Room")
+    @nonobjc public func fetchRequest() -> NSFetchRequest<Group> {
+        return NSFetchRequest<Group>(entityName: "Group")
     }
 }
 
-extension Room: TableViewFirstColumnProtocol {
+extension Group: TableViewFirstColumnProtocol {
 
     @objc dynamic public var displayNameForTableView: String {
-        return roomNumber
+        return name
     }
 
     func loadAllRelationShipObjetcsBy(typeOfObject type: String) -> [TableViewFirstColumnProtocol] {
         let selectedElement = PickerElement.selected(string: type)
         switch selectedElement {
-        case .teams:
-            return self.teams.allObjects as! [TableViewFirstColumnProtocol]
+        case .persons:
+            return self.persons.allObjects as! [TableViewFirstColumnProtocol]
         default:
             fatalError("wrong select")
         }
     }
 
     func arrayOfRelationShip() -> [String] {
-        return [PickerElement.offices.rawValue, PickerElement.teams.rawValue]
+        return [PickerElement.teams.rawValue, PickerElement.persons.rawValue]
     }
 
     func choosed(selected: String) -> [TableViewFirstColumnProtocol] {
         let selectedElement = PickerElement.selected(string: selected)
         switch selectedElement {
-        case .teams:
-            return self.teams.allObjects as! [TableViewFirstColumnProtocol]
+        case .persons:
+            return self.persons.allObjects as! [TableViewFirstColumnProtocol]
         default:
             fatalError("wrong select")
         }
     }
 
     func getMenuForNewItems() -> [String] {
-        return [CreateNew.team.rawValue]
+        return [CreateNew.person.rawValue]
     }
     
     func handleTapOnCreateNew(selected: String) {
         switch selected {
-        case CreateNew.team.rawValue:
-            addNewTeam()
+        case CreateNew.person.rawValue:
+            addNewPerson()
         default:
             fatalError("element not found")
         }
     }
 
-    private func addNewTeam() {
-        CreatorManager.shared.createNewTeam { (team) in
-            team.company = self.office.company
-            let mutableCopy = self.teams.mutableCopy() as! NSMutableSet
-            mutableCopy.add(team)
-            self.teams = mutableCopy
-            
-            let mutuableCopy = self.office.company.teams.mutableCopy() as! NSMutableSet
-            mutuableCopy.add(team)
-            self.office.company.teams = mutuableCopy
+    private func addNewPerson() {
+        CreataNewCorDataObjFactory.shared.createNewPerson { (person) in
+            let mutableCopy = self.persons.mutableCopy() as! NSMutableSet
+            mutableCopy.add(person)
+            self.persons = mutableCopy
             //CoreManager.shared.saveContext()
         }
     }

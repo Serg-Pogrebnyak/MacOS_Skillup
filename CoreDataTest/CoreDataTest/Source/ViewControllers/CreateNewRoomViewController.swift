@@ -1,5 +1,5 @@
 //
-//  CreateNewPersonViewController.swift
+//  CreateNewRoomViewController.swift
 //  CoreDataTest
 //
 //  Created by Sergey Pohrebnuak on 18.03.2020.
@@ -8,14 +8,14 @@
 
 import Cocoa
 
-class CreateNewPersonViewController: NSViewController {
+class CreateNewRoomViewController: NSViewController {
 
-    var callback: ((Employee) -> Void)?
+    var callback: ((Room) -> Void)?
 
-    @IBOutlet weak var personName: NSTextField!
+    @IBOutlet weak fileprivate var roomName: NSTextField!
 
     @IBAction func didTapCreateButton(_ sender: Any) {
-        callback?(Employee(employeeName: personName.stringValue))
+        callback?(Room(roomNumber: roomName.stringValue))
         self.view.window?.close()
     }
     

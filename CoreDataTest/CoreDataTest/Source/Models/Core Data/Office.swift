@@ -82,7 +82,7 @@ extension Office: TableViewFirstColumnProtocol {
     }
 
     private func addNewRoom() {
-        CreatorManager.shared.createNewRoom { (room) in
+        CreataNewCorDataObjFactory.shared.createNewRoom { (room) in
             let mutableCopy = self.rooms.mutableCopy() as! NSMutableSet
             mutableCopy.add(room)
             self.rooms = mutableCopy

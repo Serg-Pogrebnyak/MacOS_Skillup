@@ -1,5 +1,5 @@
 //
-//  CreateNewRoomViewController.swift
+//  CreateNewTeamViewController.swift
 //  CoreDataTest
 //
 //  Created by Sergey Pohrebnuak on 18.03.2020.
@@ -8,14 +8,14 @@
 
 import Cocoa
 
-class CreateNewRoomViewController: NSViewController {
+class CreateNewTeamViewController: NSViewController {
+    
+    var callback: ((Team) -> Void)?
 
-    var callback: ((Room) -> Void)?
-
-    @IBOutlet weak var roomName: NSTextField!
+    @IBOutlet weak fileprivate var teamName: NSTextField!
 
     @IBAction func didTapCreateButton(_ sender: Any) {
-        callback?(Room(roomNumber: roomName.stringValue))
+        callback?(Team(teamName: teamName.stringValue))
         self.view.window?.close()
     }
     

@@ -1,5 +1,5 @@
 //
-//  Group.swift
+//  Team.swift
 //  CoreDataTest
 //
 //  Created by Sergey Pogrebnyak on 05.03.2020.
@@ -9,20 +9,21 @@
 import Foundation
 import CoreData
 
-class Group: NSManagedObject {
+class Team: NSManagedObject {
     @NSManaged public var name: String
-    @NSManaged public var team: Team
-    @NSManaged public var persons: NSSet
+    @NSManaged public var rooms: NSSet
+    @NSManaged public var groups: NSSet
+    @NSManaged public var company: Company
     @NSManaged public var idLocal: String
-
-    private enum CreateNew: String {
-        case person = "Create new person"
-    }
     
-    init(groupName: String) {
-        let entity = NSEntityDescription.entity(forEntityName: "Group", in: CoreManager.shared.coreManagerContext)!
+    private enum CreateNew: String {
+        case group = "Create new group"
+    }
+
+    init(teamName: String) {
+        let entity = NSEntityDescription.entity(forEntityName: "Team", in: CoreManager.shared.coreManagerContext)!
         super.init(entity: entity, insertInto: CoreManager.shared.coreManagerContext)
-        self.name = groupName
+        self.name = teamName
         self.idLocal = UUID().uuidString
     }
 
@@ -30,12 +31,12 @@ class Group: NSManagedObject {
         super.init(entity: entity, insertInto: context)
     }
 
-    @nonobjc public func fetchRequest() -> NSFetchRequest<Group> {
-        return NSFetchRequest<Group>(entityName: "Group")
+    @nonobjc public func fetchRequest() -> NSFetchRequest<Team> {
+        return NSFetchRequest<Team>(entityName: "Team")
     }
 }
 
-extension Group: TableViewFirstColumnProtocol {
+extension Team: TableViewFirstColumnProtocol {
 
     @objc dynamic public var displayNameForTableView: String {
         return name
@@ -44,45 +45,47 @@ extension Group: TableViewFirstColumnProtocol {
     func loadAllRelationShipObjetcsBy(typeOfObject type: String) -> [TableViewFirstColumnProtocol] {
         let selectedElement = PickerElement.selected(string: type)
         switch selectedElement {
-        case .persons:
-            return self.persons.allObjects as! [TableViewFirstColumnProtocol]
+        case .groups:
+            return self.groups.allObjects as! [TableViewFirstColumnProtocol]
         default:
             fatalError("wrong select")
         }
     }
 
     func arrayOfRelationShip() -> [String] {
-        return [PickerElement.teams.rawValue, PickerElement.persons.rawValue]
+        return [PickerElement.rooms.rawValue, PickerElement.groups.rawValue]
     }
 
     func choosed(selected: String) -> [TableViewFirstColumnProtocol] {
         let selectedElement = PickerElement.selected(string: selected)
         switch selectedElement {
-        case .persons:
-            return self.persons.allObjects as! [TableViewFirstColumnProtocol]
+        case .groups:
+            return self.groups.allObjects as! [TableViewFirstColumnProtocol]
+        case .rooms:
+            return self.rooms.allObjects as! [TableViewFirstColumnProtocol]
         default:
             fatalError("wrong select")
         }
     }
 
     func getMenuForNewItems() -> [String] {
-        return [CreateNew.person.rawValue]
+        return [CreateNew.group.rawValue]
     }
     
     func handleTapOnCreateNew(selected: String) {
         switch selected {
-        case CreateNew.person.rawValue:
-            addNewPerson()
+        case CreateNew.group.rawValue:
+            addNewGroup()
         default:
             fatalError("element not found")
         }
     }
 
-    private func addNewPerson() {
-        CreatorManager.shared.createNewPerson { (person) in
-            let mutableCopy = self.persons.mutableCopy() as! NSMutableSet
-            mutableCopy.add(person)
-            self.persons = mutableCopy
+    private func addNewGroup() {
+        CreataNewCorDataObjFactory.shared.createNewGroup { (group) in
+            let mutableCopy = self.groups.mutableCopy() as! NSMutableSet
+            mutableCopy.add(group)
+            self.groups = mutableCopy
             //CoreManager.shared.saveContext()
         }
     }

@@ -12,8 +12,8 @@ class CreateNewOfficeViewController: NSViewController {
 
     var callback: ((Office) -> Void)?
 
-    @IBOutlet weak var officeName: NSTextField!
-    @IBOutlet weak var officeAddress: NSTextField!
+    @IBOutlet weak fileprivate var officeName: NSTextField!
+    @IBOutlet weak fileprivate var officeAddress: NSTextField!
 
     @IBAction func didTapCreateButton(_ sender: Any) {
         callback?(Office(officeName: officeName.stringValue, address: officeAddress.stringValue))

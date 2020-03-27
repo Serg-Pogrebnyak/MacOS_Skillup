@@ -10,6 +10,7 @@
 		0B49A6C92422484200823960 /* CreateNewTeamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B49A6C82422484200823960 /* CreateNewTeamViewController.swift */; };
 		0B4E8F3C242D1E5C004ABEA7 /* googleplaystore.csv in Resources */ = {isa = PBXBuildFile; fileRef = 0B4E8F3B242D1E5C004ABEA7 /* googleplaystore.csv */; };
 		0B4E8F3E242D1ED3004ABEA7 /* ServerEmulator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B4E8F3D242D1ED3004ABEA7 /* ServerEmulator.swift */; };
+		0B4E8F45242E296F004ABEA7 /* PickerElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B4E8F44242E296F004ABEA7 /* PickerElement.swift */; };
 		0B8AF2B024225C6000927500 /* CreateNewRoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B8AF2AE24225C6000927500 /* CreateNewRoomViewController.swift */; };
 		0B8AF2B32422662300927500 /* CreateNewGroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B8AF2B22422662300927500 /* CreateNewGroupViewController.swift */; };
 		0B8AF2B52422739900927500 /* CreateNewPersonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B8AF2B42422739900927500 /* CreateNewPersonViewController.swift */; };
@@ -39,6 +40,7 @@
 		0B49A6C82422484200823960 /* CreateNewTeamViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNewTeamViewController.swift; sourceTree = "<group>"; };
 		0B4E8F3B242D1E5C004ABEA7 /* googleplaystore.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = googleplaystore.csv; sourceTree = "<group>"; };
 		0B4E8F3D242D1ED3004ABEA7 /* ServerEmulator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerEmulator.swift; sourceTree = "<group>"; };
+		0B4E8F44242E296F004ABEA7 /* PickerElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerElement.swift; sourceTree = "<group>"; };
 		0B8AF2AE24225C6000927500 /* CreateNewRoomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNewRoomViewController.swift; sourceTree = "<group>"; };
 		0B8AF2B22422662300927500 /* CreateNewGroupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNewGroupViewController.swift; sourceTree = "<group>"; };
 		0B8AF2B42422739900927500 /* CreateNewPersonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNewPersonViewController.swift; sourceTree = "<group>"; };
@@ -82,6 +84,7 @@
 			isa = PBXGroup;
 			children = (
 				DEDDA99924114CB60027CF2C /* TableViewFirstColumnProtocol.swift */,
+				0B4E8F44242E296F004ABEA7 /* PickerElement.swift */,
 				DE91D697241139B2003F7D93 /* Company.swift */,
 				DE91D69924113A46003F7D93 /* Office.swift */,
 				DE91D69B24113B43003F7D93 /* Room.swift */,
@@ -111,6 +114,56 @@
 			path = "Mocked data";
 			sourceTree = "<group>";
 		};
+		0B4E8F3F242E19F5004ABEA7 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				DE91D68B240FD842003F7D93 /* Storyboards */,
+				DE91D68D240FD873003F7D93 /* Images */,
+				DE91D68E240FD895003F7D93 /* Plist */,
+				0B4E8F3A242D1E3A004ABEA7 /* Mocked data */,
+				0B4E8F40242E19FE004ABEA7 /* Entitlements */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		0B4E8F40242E19FE004ABEA7 /* Entitlements */ = {
+			isa = PBXGroup;
+			children = (
+				DE91D683240FC357003F7D93 /* CoreDataTest.entitlements */,
+			);
+			path = Entitlements;
+			sourceTree = "<group>";
+		};
+		0B4E8F41242E1A3E004ABEA7 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				DE91D676240FC355003F7D93 /* AppDelegate.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		0B4E8F42242E1A47004ABEA7 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				DE91D693240FDA27003F7D93 /* MainVC.swift */,
+				DE46CA48241B6E3E00444043 /* CreateNewOfficeViewController.swift */,
+				0B49A6C82422484200823960 /* CreateNewTeamViewController.swift */,
+				0BF701572422856B000139EE /* CreateNewTeamFromCompanyViewController.swift */,
+				0B8AF2AE24225C6000927500 /* CreateNewRoomViewController.swift */,
+				0B8AF2B22422662300927500 /* CreateNewGroupViewController.swift */,
+				0B8AF2B42422739900927500 /* CreateNewPersonViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		0B4E8F43242E1A5D004ABEA7 /* Window Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				DE46CA4C241B9F8700444043 /* TestWindowController.swift */,
+			);
+			path = "Window Controllers";
+			sourceTree = "<group>";
+		};
 		DE91D66A240FC355003F7D93 = {
 			isa = PBXGroup;
 			children = (
@@ -130,15 +183,8 @@
 		DE91D675240FC355003F7D93 /* CoreDataTest */ = {
 			isa = PBXGroup;
 			children = (
-				DE91D683240FC357003F7D93 /* CoreDataTest.entitlements */,
 				DE91D689240FD7AA003F7D93 /* Source */,
-				DE91D68A240FD827003F7D93 /* Models */,
-				DE91D68B240FD842003F7D93 /* Storyboards */,
-				DE91D68C240FD85C003F7D93 /* CoreData */,
-				DEB591B02418FDE10087D51E /* Nibs */,
-				DE91D68D240FD873003F7D93 /* Resources */,
-				DE91D68E240FD895003F7D93 /* Plist */,
-				0B4E8F3A242D1E3A004ABEA7 /* Mocked data */,
+				0B4E8F3F242E19F5004ABEA7 /* Resources */,
 			);
 			path = CoreDataTest;
 			sourceTree = "<group>";
@@ -146,15 +192,11 @@
 		DE91D689240FD7AA003F7D93 /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				DE91D676240FC355003F7D93 /* AppDelegate.swift */,
-				DE91D693240FDA27003F7D93 /* MainVC.swift */,
-				DE46CA48241B6E3E00444043 /* CreateNewOfficeViewController.swift */,
-				0B49A6C82422484200823960 /* CreateNewTeamViewController.swift */,
-				0BF701572422856B000139EE /* CreateNewTeamFromCompanyViewController.swift */,
-				0B8AF2AE24225C6000927500 /* CreateNewRoomViewController.swift */,
-				0B8AF2B22422662300927500 /* CreateNewGroupViewController.swift */,
-				0B8AF2B42422739900927500 /* CreateNewPersonViewController.swift */,
-				DE46CA4C241B9F8700444043 /* TestWindowController.swift */,
+				0B4E8F41242E1A3E004ABEA7 /* Application */,
+				0B4E8F43242E1A5D004ABEA7 /* Window Controllers */,
+				0B4E8F42242E1A47004ABEA7 /* ViewControllers */,
+				DE91D68A240FD827003F7D93 /* Models */,
+				DE91D68C240FD85C003F7D93 /* CoreData */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -186,12 +228,12 @@
 			path = CoreData;
 			sourceTree = "<group>";
 		};
-		DE91D68D240FD873003F7D93 /* Resources */ = {
+		DE91D68D240FD873003F7D93 /* Images */ = {
 			isa = PBXGroup;
 			children = (
 				DE91D67D240FC357003F7D93 /* Assets.xcassets */,
 			);
-			path = Resources;
+			path = Images;
 			sourceTree = "<group>";
 		};
 		DE91D68E240FD895003F7D93 /* Plist */ = {
@@ -200,13 +242,6 @@
 				DE91D682240FC357003F7D93 /* Info.plist */,
 			);
 			path = Plist;
-			sourceTree = "<group>";
-		};
-		DEB591B02418FDE10087D51E /* Nibs */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Nibs;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -296,6 +331,7 @@
 				DE46CA4D241B9F8700444043 /* TestWindowController.swift in Sources */,
 				DE46CA4F241BCD4700444043 /* CreatorManager.swift in Sources */,
 				DE91D694240FDA27003F7D93 /* MainVC.swift in Sources */,
+				0B4E8F45242E296F004ABEA7 /* PickerElement.swift in Sources */,
 				DE91D67C240FC355003F7D93 /* CoreDataTest.xcdatamodeld in Sources */,
 				0B8AF2B32422662300927500 /* CreateNewGroupViewController.swift in Sources */,
 				0B49A6C92422484200823960 /* CreateNewTeamViewController.swift in Sources */,
@@ -437,12 +473,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = CoreDataTest/CoreDataTest.entitlements;
+				CODE_SIGN_ENTITLEMENTS = CoreDataTest/Resources/Entitlements/CoreDataTest.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = YQ63ZZYZV7;
 				ENABLE_HARDENED_RUNTIME = YES;
-				INFOPLIST_FILE = CoreDataTest/Plist/Info.plist;
+				INFOPLIST_FILE = CoreDataTest/Resources/Plist/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
@@ -458,12 +494,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = CoreDataTest/CoreDataTest.entitlements;
+				CODE_SIGN_ENTITLEMENTS = CoreDataTest/Resources/Entitlements/CoreDataTest.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = YQ63ZZYZV7;
 				ENABLE_HARDENED_RUNTIME = YES;
-				INFOPLIST_FILE = CoreDataTest/Plist/Info.plist;
+				INFOPLIST_FILE = CoreDataTest/Resources/Plist/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",

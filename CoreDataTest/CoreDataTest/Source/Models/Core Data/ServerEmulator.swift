@@ -36,7 +36,7 @@ struct ServerEmulator {
         }
     }
     
-    func csv(data: String) -> [[String]] {
+    fileprivate func csv(data: String) -> [[String]] {
         var result: [[String]] = []
         let rows = data.components(separatedBy: "\n")
         for row in rows {
@@ -46,7 +46,7 @@ struct ServerEmulator {
         return result
     }
     
-    func readDataFromCSV(fileName:String, fileType: String) -> String! {
+    fileprivate func readDataFromCSV(fileName:String, fileType: String) -> String! {
         guard let filepath = Bundle.main.path(forResource: fileName, ofType: fileType)
             else {
                 return nil
@@ -61,7 +61,7 @@ struct ServerEmulator {
         }
     }
     
-    func cleanRows(file:String)->String{
+    fileprivate func cleanRows(file:String)->String{
         var cleanFile = file
         cleanFile = cleanFile.replacingOccurrences(of: "\r", with: "\n")
         cleanFile = cleanFile.replacingOccurrences(of: "\n\n", with: "\n")

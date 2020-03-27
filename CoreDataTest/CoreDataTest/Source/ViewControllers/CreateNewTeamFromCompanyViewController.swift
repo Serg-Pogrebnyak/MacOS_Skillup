@@ -12,11 +12,10 @@ class CreateNewTeamFromCompanyViewController: NSViewController {
 
     var callback: ((Team) -> Void)?
     
+    @IBOutlet weak fileprivate var teamName: NSTextField!
+    @IBOutlet weak fileprivate var roomTableView: NSTableView!
     
-    @IBOutlet weak var roomTableView: NSTableView!
     @objc dynamic var arrayOfElements = [TableViewFirstColumnProtocol]()
-
-    @IBOutlet weak var teamName: NSTextField!
 
     @IBAction func didTapCreateButton(_ sender: Any) {
         if roomTableView!.selectedRow >= 0 {

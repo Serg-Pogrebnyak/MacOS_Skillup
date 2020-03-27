@@ -10,10 +10,11 @@ import Cocoa
 
 class MainVC: NSViewController {
 
-    @IBOutlet weak var myTableView: NSTableView!
-    @IBOutlet fileprivate weak var userNameTextField: NSTextField!
+    @IBOutlet weak fileprivate var myTableView: NSTableView!
+    @IBOutlet weak fileprivate var userNameTextField: NSTextField!
+    
     @objc dynamic fileprivate var arrayOfElements = [TableViewFirstColumnProtocol]()
-    var selectedElement: TableViewFirstColumnProtocol?
+    fileprivate var selectedElement: TableViewFirstColumnProtocol?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,6 +27,7 @@ class MainVC: NSViewController {
         updateUI()
     }
     
+    //MARK: - IBActions
     @IBAction func didTapAddNewUserButton(_ sender: Any) {
         switch HistoryManager.shared.currentObject {
         case .company:
@@ -56,8 +58,9 @@ class MainVC: NSViewController {
 
         arrayOfElements = lastElement.loadAllRelationShipObjetcsBy(typeOfObject: HistoryManager.shared.currentObject.rawValue)
     }
-
-    func updateUI() {
+    
+    //MARK: - fileprivate function
+    fileprivate func updateUI() {
         myTableView.tableColumns.first!.headerCell.stringValue = HistoryManager.shared.currentObject.rawValue
         guard !arrayOfElements.isEmpty else {
             myTableView.menu = nil
@@ -66,14 +69,14 @@ class MainVC: NSViewController {
         myTableView.menu = createContextMenuItems()
     }
 
-    func createContextMenuItems() -> NSMenu {
+    fileprivate func createContextMenuItems() -> NSMenu {
         let selectedElement = arrayOfElements.first!
         let contextMenu = NSMenu()
         contextMenu.delegate = self
         
         let arrayOfRelationShip = selectedElement.arrayOfRelationShip()
         for title in arrayOfRelationShip {
-            let newMenuItem = NSMenuItem(title: title, action: #selector(didTapOnButton(_:)), keyEquivalent: "")
+            let newMenuItem = NSMenuItem(title: title, action: #selector(didTapOnButtonRelationship(_:)), keyEquivalent: "")
             contextMenu.addItem(newMenuItem)
         }
         
@@ -87,7 +90,7 @@ class MainVC: NSViewController {
         return contextMenu
     }
     
-    @objc func dataWasLoadedFromServer() {
+    @objc fileprivate func dataWasLoadedFromServer() {
         CoreManager.shared.coreManagerContext.perform {
             do {
                 self.arrayOfElements = try CoreManager.shared.coreManagerContext.fetch(Company.fetchRequest()) as! [Company]
@@ -98,7 +101,7 @@ class MainVC: NSViewController {
         }
     }
     
-    @objc func didTapOnButtonCreateNew(_ sender: NSMenuItem) {
+    @objc fileprivate func didTapOnButtonCreateNew(_ sender: NSMenuItem) {
         defer {
             updateUI()
         }
@@ -110,7 +113,7 @@ class MainVC: NSViewController {
     
 
 
-    @objc func didTapOnButton(_ sender: NSMenuItem) {
+    @objc fileprivate func didTapOnButtonRelationship(_ sender: NSMenuItem) {
         defer {
             updateUI()
         }
